@@ -1,0 +1,11 @@
+﻿################################################################################
+# This .gitignore file was automatically created by Microsoft(R) Visual Studio.
+################################################################################
+
+/.vs
+/obj/Debug/net7.0
+/obj
+/PP.Library.Models/bin/Debug/net7.0
+/PP.Library.Models/obj
+/PP.CLI/bin/Debug/net7.0
+/PP.CLI/obj

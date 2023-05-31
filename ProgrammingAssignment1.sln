@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.5.33627.172
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "PP_CLI", "PP.CLI\PP_CLI.csproj", "{E5528110-E4E8-4561-9E09-338D2D0D05C9}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "PP_Library", "PP.Library.Models\PP_Library.csproj", "{C40F8BA3-6155-4B52-A166-2E1E8DD8A1A9}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{E5528110-E4E8-4561-9E09-338D2D0D05C9}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E5528110-E4E8-4561-9E09-338D2D0D05C9}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E5528110-E4E8-4561-9E09-338D2D0D05C9}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E5528110-E4E8-4561-9E09-338D2D0D05C9}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C40F8BA3-6155-4B52-A166-2E1E8DD8A1A9}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C40F8BA3-6155-4B52-A166-2E1E8DD8A1A9}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C40F8BA3-6155-4B52-A166-2E1E8DD8A1A9}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C40F8BA3-6155-4B52-A166-2E1E8DD8A1A9}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {1D006F84-D87D-4ECC-88F5-B91D39BDABE7}
+	EndGlobalSection
+EndGlobal
