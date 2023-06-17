@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:vm="clr-namespace:PP.MAUIApp.ViewModels"
+             x:Class="PP.MAUIApp.Views.ClientPage"
+             Title="Client Page">
+
+    <!--The below BindingContext replaces the required BindingContext in the .xaml.cs file-->
+    <ContentPage.BindingContext>
+        <vm:ClientViewViewModel/>
+    </ContentPage.BindingContext>
+    <ScrollView>
+
+        <VerticalStackLayout>
+            <Grid >
+                <Grid.ColumnDefinitions >
+                    <ColumnDefinition Width = "8*" />
+                    <ColumnDefinition />
+                </Grid.ColumnDefinitions >
+                <Entry Grid.Column = "0" Text = "{Binding Path=Query}" ></Entry >
+                <Button Grid.Column = "1" Text = "Search" Clicked = "ClickedSearch" ></Button >
+            </Grid >
+
+            <Grid >
+                <ListView
+                ItemsSource = "{Binding Path=Clients, Mode=TwoWay}"
+                SelectedItem = "{Binding Path=SelectedClient, Mode=TwoWay}"
+                >
+                    <ListView.ItemTemplate>
+                        <DataTemplate>
+                            <ViewCell>
+                                <Grid >
+                                    <Grid.ColumnDefinitions >
+                                        <ColumnDefinition Width="8*"/>
+                                        <ColumnDefinition />
+                                    </Grid.ColumnDefinitions >
+                                    <Label Grid.Column="0" Text="{Binding Path=Display}"></Label>
+                                    <Button Grid.Column="1" Text="View Projects"></Button >
+                                </Grid >
+                            </ViewCell>
+                        </DataTemplate>
+                    </ListView.ItemTemplate>
+                </ListView >
+            </Grid >
+
+            <Grid >
+                <Grid.ColumnDefinitions >
+                    <ColumnDefinition />
+                    <ColumnDefinition />
+                    <ColumnDefinition />
+                </Grid.ColumnDefinitions >
+                <Button Text = "Add Client" Grid.Column = "0" Clicked="AddClicked"></Button >
+                <Button Text = "Edit Client" Grid.Column = "1" Clicked="EditClicked"></Button >
+                <Button Text = "Delete Client" Grid.Column = "2" Clicked="DeleteClicked"></Button >
+            </Grid >
+            <Button Text="Go Back" Clicked="GoBackClicked"/>
+
+        </VerticalStackLayout>
+    </ScrollView>
+</ContentPage>

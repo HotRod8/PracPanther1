@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<Shell
+    x:Class="PP.MAUIApp.AppShell"
+    xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:local="clr-namespace:PP.MAUIApp"
+    xmlns:local2="clr-namespace:PP.MAUIApp.Views"
+    Shell.FlyoutBehavior="Disabled">
+
+    <ShellContent
+        Title="Home"
+        ContentTemplate="{DataTemplate local:MainPage}"
+        Route="MainPage" />
+    <ShellContent
+        Title="Client Page"
+        ContentTemplate="{DataTemplate local2:ClientPage}"
+        Route="ClientPage" />
+    <ShellContent
+        Title="Client Sign-up"
+        ContentTemplate="{DataTemplate local2:AddClientView}"
+        Route="AddClient" />
+    <ShellContent
+        Title="Client Editor"
+        ContentTemplate="{DataTemplate local2:EditClientView}"
+        Route="EditClient" />
+
+</Shell>

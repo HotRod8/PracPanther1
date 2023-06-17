@@ -35,6 +35,14 @@ namespace PP_Library.Models
             }
             return "Account inactive or does not exist.";
         }
+
+        public Client()
+        {
+            IsActive = true;
+            Id = 0;
+            Name = string.Empty;
+            OpenDate = DateTime.Today; 
+        }
     }
     /*Allow users to supply CRUD (Create, Read, Update, and Delete) functionality for Clients to a list of Clients
      * Allow users to supply CRUD (Create, Read, Update, and Delete) functionality for Projects to a list of Projects

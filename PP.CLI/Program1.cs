@@ -69,16 +69,7 @@ namespace PP_CLI
                     ProjLinker.Current.Read();
                     Console.WriteLine("Which of these above accounts do you wish to update?");
                     var updateChoice = int.Parse(Console.ReadLine() ?? "0");
-
-                    var ClientToUpdate = ProjLinker.Current.Get(updateChoice);
-                    if (ClientToUpdate != null)
-                    {
-                        Console.WriteLine("What is the Client's updated name?");
-                        ClientToUpdate.Name = Console.ReadLine() ?? "John/Jane Doe";
-
-                        Console.WriteLine("What are the Client's updated notes?");
-                        ClientToUpdate.Notes = Console.ReadLine() ?? string.Empty;
-                    }
+                    ProjLinker.Current.Edit(updateChoice);
                 }
                 else if (choice.Equals("D", StringComparison.InvariantCultureIgnoreCase))
                 {
