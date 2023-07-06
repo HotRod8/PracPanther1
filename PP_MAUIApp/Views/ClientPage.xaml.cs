@@ -29,7 +29,7 @@ namespace PP.MAUIApp.Views
 
         private void DeleteClicked(object sender, EventArgs e)
         {
-            (BindingContext as ClientViewViewModel).Delete();
+            (BindingContext as ClientViewViewModel).RefreshClientList();
         }
 
         private void GoBackClicked(object sender, EventArgs e)
@@ -37,14 +37,15 @@ namespace PP.MAUIApp.Views
             Shell.Current.GoToAsync("//MainPage");
         }
 
-        /*count++;
+        private void OnArrived(object sender, NavigatedToEventArgs e)
+        {
+            BindingContext = new ClientViewViewModel();
+            (BindingContext as ClientViewViewModel).RefreshClientList();
+        }
 
-                if (count == 1)
-                    CounterBtn.Text = $"Clicked {count} time";
-                else
-                    CounterBtn.Text = $"Clicked {count} times";
-
-                SemanticScreenReader.Announce(CounterBtn.Text);
-         */
+        private void ProjsClicked(object sender, EventArgs e)
+        {
+            (BindingContext as ClientViewViewModel).RefreshClientList();
+        }
     }
 }

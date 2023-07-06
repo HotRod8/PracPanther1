@@ -16,18 +16,26 @@ namespace PP_Library.Models
          */
     public class Time
     {
+        //Consider making a TimeID to not unintentionally
+        //delete multiple Time entries at once.
+        public Time() 
+        {
+            ProjectId = 0;
+            EmployeeId = 0;
+            Date = DateTime.Now;
+            Narrative = "";
+            Hours = 0;
+        }
         public int ProjectId { get; set; }
         public int EmployeeId { get; set; }
         public DateTime Date { get; set; }
-        public string Narrative { 
-            get { return Narrative; } 
-            set { Narrative = value; } 
-        }
+        public string? Narrative { get; set; }
         public int Hours { get; set; }
 
         public override string ToString()
         {
-            return $"[{EmployeeId}] {ProjectId}. {Date}. {Hours}. \n{Narrative}";
+            return $"EmplID:[{EmployeeId}] ProjID:({ProjectId}) " +
+                $"{Date}. {Hours} total hrs.\n{Narrative}";
         }
     }
     /* Allow users to supply CRUD (Create, Read, Update, and Delete) functionality to a Time entry on a Project.

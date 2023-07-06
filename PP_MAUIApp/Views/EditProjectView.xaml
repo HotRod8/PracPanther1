@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="PP.MAUIApp.Views.EditProjectView"
+             Title="EditProjectView"
+             NavigatedTo="OnArriving">
+    <VerticalStackLayout>
+        <Grid>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition />
+                <ColumnDefinition Width="5*"/>
+            </Grid.ColumnDefinitions >
+            <!--Make sure to bind your path here to a Project type in ProjectViewModel-->
+            <Label Grid.Column="0" Text="Change your Long Name here:"/>
+            <Entry Grid.Column="1" Text="{Binding Path=Blueprint.LongName}"/>
+        </Grid>
+        <Grid>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition />
+                <ColumnDefinition Width="5*"/>
+                <ColumnDefinition />
+            </Grid.ColumnDefinitions >
+            <Label Grid.Column="0" Text="Update your Short Name here:"/>
+            <Entry Grid.Column="1" Text="{Binding Path=Blueprint.ShortName}"/>
+            <Button Grid.Column="2" Text="Update" Clicked="UpdateClicked"/>
+        </Grid>
+        <Button Text="Go Back" Clicked="GoBackClicked"/>
+        <Button Text="View Bills" Clicked="BillsClicked"/>
+        <!--When finished executing "View Bills", display all bills for this project below-->
+    </VerticalStackLayout>
+</ContentPage>

@@ -48,12 +48,24 @@ namespace PP_Library.Services
 
         public List<Employee> Search(string query)
         {
-            return employees.Where(s => s.Name.ToUpper().Contains(query.ToUpper())).ToList();
+            return employees.Where(s => s.Name.ToUpper().Contains(query?.ToUpper() ?? string.Empty)).ToList();
         }
 
         public void Add(Employee? Employee)
         {
-            if (Employee != null) { employees.Add(Employee); }
+            if (Employee != null) 
+            {
+                Employee.Id = LastId + 1;
+                employees.Add(Employee);
+            }
+        }
+
+        private int LastId
+        {
+            get
+            {
+                return Employees.Any() ? Employees.Select(c => c.Id).Max() : 0;
+            }
         }
 
         public void Read()
@@ -62,16 +74,13 @@ namespace PP_Library.Services
             { Console.WriteLine(money); }
             //employees.ForEach(Console.WriteLine);
         }
-        public void Edit(int toUpdate)
+        public void Edit(Employee toUpdate)
         {
-            var UpdateEmployee = Current.Get(toUpdate);
+            var UpdateEmployee = Current.Get(toUpdate.Id);
             if (UpdateEmployee != null)
             {
-                Console.WriteLine("What is this employee's updated rate?");
-                UpdateEmployee.Rate = decimal.Parse(Console.ReadLine() ?? "0");
-
-                Console.WriteLine("What is this employee's updated name?");
-                UpdateEmployee.Name = Console.ReadLine() ?? string.Empty;
+                UpdateEmployee.Rate = toUpdate.Rate;
+                UpdateEmployee.Name = toUpdate.Name;
             }
         }
         public void Delete(int id)

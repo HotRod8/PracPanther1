@@ -17,5 +17,15 @@ namespace PP.MAUIApp
         {
             Shell.Current.GoToAsync("//ClientPage");
         }
+
+        private void EmployeesClicked(object sender, EventArgs e)
+        {
+            Shell.Current.GoToAsync("//EmployeePage");
+        }
+
+        private void TimeClicked(object sender, EventArgs e)
+        {
+            Shell.Current.GoToAsync("//TimePage");
+        }
     }
 }

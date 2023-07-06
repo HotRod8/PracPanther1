@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="PP.MAUIApp.Views.AddEmployee"
+             Title="AddEmployee"
+             NavigatedTo="OnArriving">
+    <VerticalStackLayout>
+        <Grid>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition />
+                <ColumnDefinition Width="6*"/>
+            </Grid.ColumnDefinitions>
+            <Label Grid.Column="0" Text="Add name here:"/>
+            <Entry Grid.Column="1" Text="{Binding Path=Model.Name}"/>
+        </Grid>
+        <Grid>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition />
+                <ColumnDefinition Width="5*"/>
+                <ColumnDefinition />
+            </Grid.ColumnDefinitions>
+            <Label Grid.Column="0" Text="Add pay rate here in $/hr:"/>
+            <Entry Grid.Column="1" Text="{Binding Path=Model.Rate}"/>
+            <Button Grid.Column="2" Text="Add" Clicked="AddClicked"/>
+        </Grid>
+        <Button Text="Go Back" Clicked="GoBackClicked"/>
+    </VerticalStackLayout>
+</ContentPage>

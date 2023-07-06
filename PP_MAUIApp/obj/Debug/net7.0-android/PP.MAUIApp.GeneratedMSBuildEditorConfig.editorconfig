@@ -50,14 +50,62 @@ build_metadata.AdditionalFiles.ManifestResourceName = PP_MAUIApp.Views.AddClient
 build_metadata.AdditionalFiles.TargetPath = Views\AddClientView.xaml
 build_metadata.AdditionalFiles.RelativePath = Views\AddClientView.xaml
 
+[C:/Users/hotro/OneDrive/Desktop/Prog._Assignments/C\#_Full-App_Dev/PracPanther1/PP_MAUIApp/Views/AddEmployee.xaml]
+build_metadata.AdditionalFiles.GenKind = Xaml
+build_metadata.AdditionalFiles.ManifestResourceName = PP_MAUIApp.Views.AddEmployee.xaml
+build_metadata.AdditionalFiles.TargetPath = Views\AddEmployee.xaml
+build_metadata.AdditionalFiles.RelativePath = Views\AddEmployee.xaml
+
+[C:/Users/hotro/OneDrive/Desktop/Prog._Assignments/C\#_Full-App_Dev/PracPanther1/PP_MAUIApp/Views/AddProjectView.xaml]
+build_metadata.AdditionalFiles.GenKind = Xaml
+build_metadata.AdditionalFiles.ManifestResourceName = PP_MAUIApp.Views.AddProjectView.xaml
+build_metadata.AdditionalFiles.TargetPath = Views\AddProjectView.xaml
+build_metadata.AdditionalFiles.RelativePath = Views\AddProjectView.xaml
+
 [C:/Users/hotro/OneDrive/Desktop/Prog._Assignments/C\#_Full-App_Dev/PracPanther1/PP_MAUIApp/Views/ClientPage.xaml]
 build_metadata.AdditionalFiles.GenKind = Xaml
 build_metadata.AdditionalFiles.ManifestResourceName = PP_MAUIApp.Views.ClientPage.xaml
 build_metadata.AdditionalFiles.TargetPath = Views\ClientPage.xaml
 build_metadata.AdditionalFiles.RelativePath = Views\ClientPage.xaml
 
+[C:/Users/hotro/OneDrive/Desktop/Prog._Assignments/C\#_Full-App_Dev/PracPanther1/PP_MAUIApp/Views/ClientProjsView.xaml]
+build_metadata.AdditionalFiles.GenKind = Xaml
+build_metadata.AdditionalFiles.ManifestResourceName = PP_MAUIApp.Views.ClientProjsView.xaml
+build_metadata.AdditionalFiles.TargetPath = Views\ClientProjsView.xaml
+build_metadata.AdditionalFiles.RelativePath = Views\ClientProjsView.xaml
+
 [C:/Users/hotro/OneDrive/Desktop/Prog._Assignments/C\#_Full-App_Dev/PracPanther1/PP_MAUIApp/Views/EditClientView.xaml]
 build_metadata.AdditionalFiles.GenKind = Xaml
 build_metadata.AdditionalFiles.ManifestResourceName = PP_MAUIApp.Views.EditClientView.xaml
 build_metadata.AdditionalFiles.TargetPath = Views\EditClientView.xaml
 build_metadata.AdditionalFiles.RelativePath = Views\EditClientView.xaml
+
+[C:/Users/hotro/OneDrive/Desktop/Prog._Assignments/C\#_Full-App_Dev/PracPanther1/PP_MAUIApp/Views/EditEmployee.xaml]
+build_metadata.AdditionalFiles.GenKind = Xaml
+build_metadata.AdditionalFiles.ManifestResourceName = PP_MAUIApp.Views.EditEmployee.xaml
+build_metadata.AdditionalFiles.TargetPath = Views\EditEmployee.xaml
+build_metadata.AdditionalFiles.RelativePath = Views\EditEmployee.xaml
+
+[C:/Users/hotro/OneDrive/Desktop/Prog._Assignments/C\#_Full-App_Dev/PracPanther1/PP_MAUIApp/Views/EditProjectView.xaml]
+build_metadata.AdditionalFiles.GenKind = Xaml
+build_metadata.AdditionalFiles.ManifestResourceName = PP_MAUIApp.Views.EditProjectView.xaml
+build_metadata.AdditionalFiles.TargetPath = Views\EditProjectView.xaml
+build_metadata.AdditionalFiles.RelativePath = Views\EditProjectView.xaml
+
+[C:/Users/hotro/OneDrive/Desktop/Prog._Assignments/C\#_Full-App_Dev/PracPanther1/PP_MAUIApp/Views/EmployeePage.xaml]
+build_metadata.AdditionalFiles.GenKind = Xaml
+build_metadata.AdditionalFiles.ManifestResourceName = PP_MAUIApp.Views.EmployeePage.xaml
+build_metadata.AdditionalFiles.TargetPath = Views\EmployeePage.xaml
+build_metadata.AdditionalFiles.RelativePath = Views\EmployeePage.xaml
+
+[C:/Users/hotro/OneDrive/Desktop/Prog._Assignments/C\#_Full-App_Dev/PracPanther1/PP_MAUIApp/Views/TimeDetailPage.xaml]
+build_metadata.AdditionalFiles.GenKind = Xaml
+build_metadata.AdditionalFiles.ManifestResourceName = PP_MAUIApp.Views.TimeDetailPage.xaml
+build_metadata.AdditionalFiles.TargetPath = Views\TimeDetailPage.xaml
+build_metadata.AdditionalFiles.RelativePath = Views\TimeDetailPage.xaml
+
+[C:/Users/hotro/OneDrive/Desktop/Prog._Assignments/C\#_Full-App_Dev/PracPanther1/PP_MAUIApp/Views/TimePage.xaml]
+build_metadata.AdditionalFiles.GenKind = Xaml
+build_metadata.AdditionalFiles.ManifestResourceName = PP_MAUIApp.Views.TimePage.xaml
+build_metadata.AdditionalFiles.TargetPath = Views\TimePage.xaml
+build_metadata.AdditionalFiles.RelativePath = Views\TimePage.xaml

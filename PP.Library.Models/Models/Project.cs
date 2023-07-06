@@ -18,7 +18,15 @@ namespace PP_Library.Models
          * A String property called LongName
          * An Int property called ClientId
          */
- //       public Client? Maker { get; set; }
+        public Project()
+        {
+            IsActive = true;
+            Id = 0;
+            ShortName = string.Empty;
+            LongName = string.Empty;
+            OpenDate = DateTime.Today;
+        }
+
         public int Id { get; set; }
         public int ClientId { get; set; }
         public string ShortName { get; set; }

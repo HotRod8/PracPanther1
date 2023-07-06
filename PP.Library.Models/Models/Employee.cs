@@ -20,14 +20,9 @@ namespace PP_Library.Models
             Name = string.Empty;
             Rate = 0;
         }
+
         public int Id { get; set; }
-        public string Name { 
-            get { return Name; }
-            set 
-            { 
-                Name = value??string.Empty;
-            }
-        }
+        public string Name { get; set; }
         public decimal Rate { get; set; }
 
         public override string ToString()

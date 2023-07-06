@@ -11,6 +11,7 @@
         Title="Home"
         ContentTemplate="{DataTemplate local:MainPage}"
         Route="MainPage" />
+    <!--This is the routing for Clients and Project below-->
     <ShellContent
         Title="Client Page"
         ContentTemplate="{DataTemplate local2:ClientPage}"
@@ -23,5 +24,39 @@
         Title="Client Editor"
         ContentTemplate="{DataTemplate local2:EditClientView}"
         Route="EditClient" />
+    <ShellContent
+        Title="Projects of the Client"
+        ContentTemplate="{DataTemplate local2:ClientProjsView}"
+        Route="ClientProjects" />
+    <ShellContent
+        Title="Project Creation"
+        ContentTemplate="{DataTemplate local2:AddProjectView}"
+        Route="AddProject" />
+    <ShellContent
+        Title="Project Editor"
+        ContentTemplate="{DataTemplate local2:EditProjectView}"
+        Route="EditProject" />
+    <!--This is the routing for Employees below-->
+    <ShellContent
+        Title="Employee List"
+        ContentTemplate="{DataTemplate local2:EmployeePage}"
+        Route="EmployeePage" />
+    <ShellContent
+        Title="Employee Hiring Process"
+        ContentTemplate="{DataTemplate local2:AddEmployee}"
+        Route="AddEmployee" />
+    <ShellContent
+        Title="Employee Account"
+        ContentTemplate="{DataTemplate local2:EditEmployee}"
+        Route="EditEmployee" />
+    <!--This is the routing for the Timer below-->
+    <ShellContent
+        Title="Time Log"
+        ContentTemplate="{DataTemplate local2:TimePage}"
+        Route="TimePage" />
+    <ShellContent
+        Title="Hourly Details"
+        ContentTemplate="{DataTemplate local2:TimeDetailPage}"
+        Route="TimeDetailPage" />
 
 </Shell>

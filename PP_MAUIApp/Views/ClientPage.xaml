@@ -3,12 +3,9 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:vm="clr-namespace:PP.MAUIApp.ViewModels"
              x:Class="PP.MAUIApp.Views.ClientPage"
-             Title="Client Page">
+             Title="Client Page"
+             NavigatedTo="OnArrived">
 
-    <!--The below BindingContext replaces the required BindingContext in the .xaml.cs file-->
-    <ContentPage.BindingContext>
-        <vm:ClientViewViewModel/>
-    </ContentPage.BindingContext>
     <ScrollView>
 
         <VerticalStackLayout>
@@ -22,6 +19,7 @@
             </Grid >
 
             <Grid >
+                <!--Clients is of type ClientViewModel. Seek def if you need proof-->
                 <ListView
                 ItemsSource = "{Binding Path=Clients, Mode=TwoWay}"
                 SelectedItem = "{Binding Path=SelectedClient, Mode=TwoWay}"
@@ -31,11 +29,27 @@
                             <ViewCell>
                                 <Grid >
                                     <Grid.ColumnDefinitions >
-                                        <ColumnDefinition Width="8*"/>
+                                        <ColumnDefinition Width="6*"/>
+                                        <ColumnDefinition />
+                                        <ColumnDefinition />
                                         <ColumnDefinition />
                                     </Grid.ColumnDefinitions >
                                     <Label Grid.Column="0" Text="{Binding Path=Display}"></Label>
-                                    <Button Grid.Column="1" Text="View Projects"></Button >
+                                    <Button Grid.Column="1"
+                                            Text="View Projects"
+                                            Command="{Binding Path=ViewProjsCommand}"
+                                            CommandParameter="{Binding}"
+                                            Clicked="ProjsClicked"></Button >
+                                    <Button Grid.Column = "2" 
+                                            Text = "Edit Client" 
+                                            Command="{Binding Path=EditCommand}" 
+                                            CommandParameter="{Binding}"
+                                            Clicked="EditClicked"></Button >
+                                    <Button Grid.Column = "3" 
+                                            Text = "Delete Client" 
+                                            Command="{Binding Path=DeleteCommand}" 
+                                            CommandParameter="{Binding}"
+                                            Clicked="DeleteClicked"></Button >
                                 </Grid >
                             </ViewCell>
                         </DataTemplate>
@@ -43,16 +57,7 @@
                 </ListView >
             </Grid >
 
-            <Grid >
-                <Grid.ColumnDefinitions >
-                    <ColumnDefinition />
-                    <ColumnDefinition />
-                    <ColumnDefinition />
-                </Grid.ColumnDefinitions >
-                <Button Text = "Add Client" Grid.Column = "0" Clicked="AddClicked"></Button >
-                <Button Text = "Edit Client" Grid.Column = "1" Clicked="EditClicked"></Button >
-                <Button Text = "Delete Client" Grid.Column = "2" Clicked="DeleteClicked"></Button >
-            </Grid >
+            <Button Text = "Add Client" Clicked="AddClicked"></Button >
             <Button Text="Go Back" Clicked="GoBackClicked"/>
 
         </VerticalStackLayout>

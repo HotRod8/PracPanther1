@@ -40,19 +40,39 @@ namespace PP_Library.Services
             };
         }
         public List<Time> Times { get { return workTime; } }
-        public Time? Get(int emplid)
+        public Time? Get(int emplid, int projid)
         {
-            return workTime.FirstOrDefault(e => e.EmployeeId == emplid);
+            return workTime.FirstOrDefault(e => (e.EmployeeId == emplid) && (e.ProjectId == projid));
         }
 
         public List<Time> Search(string query)
         {
+            //Doesn't like a null query
             return Times.Where(s => s.Narrative.ToUpper().Contains(query.ToUpper())).ToList();
         }
 
         public void Add(Time? Time)
         {
-            if (Time != null) { workTime.Add(Time); }
+            if (Time != null)
+            {
+                if (Time.EmployeeId == 0) { Time.EmployeeId = LastEmplId + 1; }
+                if (Time.ProjectId == 0) { Time.ProjectId = LastProjId + 1; }
+                workTime.Add(Time);
+            }
+        }
+        private int LastEmplId
+        {
+            get
+            {
+                return Times.Any() ? Times.Select(c => c.EmployeeId).Max() : 0;
+            }
+        }
+        private int LastProjId
+        {
+            get
+            {
+                return Times.Any() ? Times.Select(c => c.ProjectId).Max() : 0;
+            }
         }
 
         public void Read()
@@ -61,26 +81,27 @@ namespace PP_Library.Services
             { Console.WriteLine(money); }
             //workTime.ForEach(Console.WriteLine);
         }
-        public void Edit(int toUpdate)
+        public void Edit(Time toUpdate)
         {
-            var UpdateTime = Current.Get(toUpdate);
+            var UpdateTime = Current.Get(toUpdate.EmployeeId, toUpdate.ProjectId);
             if (UpdateTime != null)
             {
-                Console.WriteLine("What is the Client's updated name?");
-                UpdateTime.Hours = int.Parse(Console.ReadLine() ?? "0");
-
-                Console.WriteLine("What are the Client's updated notes?");
-                UpdateTime.Narrative = Console.ReadLine() ?? string.Empty;
+                UpdateTime.Hours = toUpdate.Hours;
+                UpdateTime.Narrative = toUpdate.Narrative;
             }
         }
-        public void Delete(int id)
+        public void Delete(int eid, int pid)
         {
-            var hrsNegated = Get(id);
+            var hrsNegated = Get(eid,pid);
             if (hrsNegated != null) { workTime.Remove(hrsNegated); }
         }
         public void Delete(Time c)
         {
-            Delete(c.EmployeeId);
+            Delete(c.EmployeeId, c.ProjectId);
+        }
+        public void Bill(int pid)
+        {
+            
         }
     }
 }

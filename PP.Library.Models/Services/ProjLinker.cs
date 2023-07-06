@@ -1,6 +1,8 @@
 ﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
+using System.Security.Claims;
 using System.Text;
 using System.Threading.Tasks;
 using PP_Library.Models;
@@ -50,12 +52,7 @@ namespace PP_Library.Services
 
         public List<Client> Search(string query)
         {
-            return Clients.Where(s => s.Name.ToUpper().Contains(query.ToUpper())).ToList();
-        }
-
-        public void Add(Client? client)
-        { 
-            if(client != null) { customers.Add(client); }
+            return Clients.Where(s => s.Name.ToUpper().Contains(query?.ToUpper() ?? string.Empty)).ToList();
         }
 
         public void Read()
@@ -65,17 +62,36 @@ namespace PP_Library.Services
             //customers.ForEach(Console.WriteLine);
         }
 
-        public void Edit(int toUpdate)
+        public void Add(Client? client)
+        { 
+            if(client != null) 
+            {
+                if (client.Id == 0) { client.Id = LastId + 1; }
+                customers.Add(client);
+            }
+        }
+
+        private int LastId
         {
-            var ClientToUpdate = Current.Get(toUpdate);
+            get {  return Clients.Any() ? Clients.Select(c => c.Id).Max() : 0;  }
+        }
+
+        public void Edit(Client Model)
+        {
+            var ClientToUpdate = Current.Get(Model.Id);
             if (ClientToUpdate != null)
             {
-                Console.WriteLine("What is the Client's updated name?");
-                ClientToUpdate.Name = Console.ReadLine() ?? "John/Jane Doe";
-
-                Console.WriteLine("What are the Client's updated notes?");
-                ClientToUpdate.Notes = Console.ReadLine() ?? string.Empty;
+                ClientToUpdate.Name = Model.Name;
+                ClientToUpdate.Notes = Model.Notes;
             }
+        }
+        public void CloseClient(Client client) 
+        {
+            var deactivateTarget = Get(client.Id);
+            var Projects = ProjService.Current.GetAllProjs(deactivateTarget?.Id ?? 0);
+            var Stuff = Projects.Any(p => p.IsActive); 
+            if (deactivateTarget != null && Stuff == false) 
+            { deactivateTarget.IsActive = false; }
         }
         public void Delete(int id)
         {

@@ -29,25 +29,25 @@
     <AppXManifest Include="C:\Users\hotro\OneDrive\Desktop\Prog._Assignments\C#_Full-App_Dev\PracPanther1\PP_MAUIApp\bin\Debug\net7.0-windows10.0.19041.0\win10-x64\AppxManifest.xml">
       <PackagePath>AppxManifest.xml</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
-      <Modified>2023-06-17T20:19:19.037</Modified>
+      <Modified>2023-07-05T21:10:17.210</Modified>
     </AppXManifest>
   </ItemGroup>
   <ItemGroup>
     <AppxPackagedFile Include="C:\Users\hotro\OneDrive\Desktop\Prog._Assignments\C#_Full-App_Dev\PracPanther1\PP_MAUIApp\bin\Debug\net7.0-windows10.0.19041.0\win10-x64\resources.pri">
       <PackagePath>resources.pri</PackagePath>
-      <Modified>2023-06-17T20:19:18.494</Modified>
+      <Modified>2023-07-05T20:51:31.930</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\hotro\OneDrive\Desktop\Prog._Assignments\C#_Full-App_Dev\PracPanther1\PP_MAUIApp\bin\Debug\net7.0-windows10.0.19041.0\win10-x64\PP.MAUIApp.runtimeconfig.json">
       <PackagePath>PP.MAUIApp.runtimeconfig.json</PackagePath>
-      <Modified>2023-06-17T20:19:18.073</Modified>
+      <Modified>2023-07-03T17:10:52.069</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\hotro\OneDrive\Desktop\Prog._Assignments\C#_Full-App_Dev\PracPanther1\PP_MAUIApp\bin\Debug\net7.0-windows10.0.19041.0\win10-x64\PP.MAUIApp.dll">
       <PackagePath>PP.MAUIApp.dll</PackagePath>
-      <Modified>2023-06-17T20:19:16.490</Modified>
+      <Modified>2023-07-05T21:10:14.940</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\hotro\OneDrive\Desktop\Prog._Assignments\C#_Full-App_Dev\PracPanther1\PP_MAUIApp\obj\Debug\net7.0-windows10.0.19041.0\win10-x64\apphost.exe">
       <PackagePath>PP.MAUIApp.exe</PackagePath>
-      <Modified>2023-06-17T20:19:16.499</Modified>
+      <Modified>2023-07-05T21:10:14.958</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\hotro\.nuget\packages\microsoft.netcore.app.runtime.win-x64\7.0.5\runtimes\win-x64\lib\net7.0\Microsoft.CSharp.dll">
       <PackagePath>Microsoft.CSharp.dll</PackagePath>
@@ -919,11 +919,11 @@
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\hotro\OneDrive\Desktop\Prog._Assignments\C#_Full-App_Dev\PracPanther1\PP.Library.Models\bin\Debug\net7.0\PP_Library.dll">
       <PackagePath>PP_Library.dll</PackagePath>
-      <Modified>2023-06-17T20:19:07.877</Modified>
+      <Modified>2023-07-05T21:10:12.022</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\hotro\OneDrive\Desktop\Prog._Assignments\C#_Full-App_Dev\PracPanther1\PP_MAUIApp\obj\Debug\net7.0-windows10.0.19041.0\win10-x64\PP.MAUIApp.deps.json">
       <PackagePath>PP.MAUIApp.deps.json</PackagePath>
-      <Modified>2023-06-17T20:19:18.839</Modified>
+      <Modified>2023-07-05T21:10:16.965</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Program Files\dotnet\packs\Microsoft.Maui.Controls.Ref.win\7.0.81\ref\net7.0-windows10.0.19041\Microsoft.Maui.Controls.Compatibility.pri">
       <PackagePath>Microsoft.Maui.Controls.Compatibility.pri</PackagePath>
@@ -943,23 +943,23 @@
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\hotro\OneDrive\Desktop\Prog._Assignments\C#_Full-App_Dev\PracPanther1\PP_MAUIApp\obj\Debug\net7.0-windows10.0.19041.0\win10-x64\resizetizer\sp\splashSplashScreen.scale-100.png">
       <PackagePath>splashSplashScreen.scale-100.png</PackagePath>
-      <Modified>2023-06-17T20:19:15.636</Modified>
+      <Modified>2023-07-03T17:09:51.013</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\hotro\OneDrive\Desktop\Prog._Assignments\C#_Full-App_Dev\PracPanther1\PP_MAUIApp\obj\Debug\net7.0-windows10.0.19041.0\win10-x64\resizetizer\sp\splashSplashScreen.scale-125.png">
       <PackagePath>splashSplashScreen.scale-125.png</PackagePath>
-      <Modified>2023-06-17T20:19:15.653</Modified>
+      <Modified>2023-07-03T17:09:51.030</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\hotro\OneDrive\Desktop\Prog._Assignments\C#_Full-App_Dev\PracPanther1\PP_MAUIApp\obj\Debug\net7.0-windows10.0.19041.0\win10-x64\resizetizer\sp\splashSplashScreen.scale-150.png">
       <PackagePath>splashSplashScreen.scale-150.png</PackagePath>
-      <Modified>2023-06-17T20:19:15.683</Modified>
+      <Modified>2023-07-03T17:09:51.050</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\hotro\OneDrive\Desktop\Prog._Assignments\C#_Full-App_Dev\PracPanther1\PP_MAUIApp\obj\Debug\net7.0-windows10.0.19041.0\win10-x64\resizetizer\sp\splashSplashScreen.scale-200.png">
       <PackagePath>splashSplashScreen.scale-200.png</PackagePath>
-      <Modified>2023-06-17T20:19:15.723</Modified>
+      <Modified>2023-07-03T17:09:51.079</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\hotro\OneDrive\Desktop\Prog._Assignments\C#_Full-App_Dev\PracPanther1\PP_MAUIApp\obj\Debug\net7.0-windows10.0.19041.0\win10-x64\resizetizer\sp\splashSplashScreen.scale-400.png">
       <PackagePath>splashSplashScreen.scale-400.png</PackagePath>
-      <Modified>2023-06-17T20:19:15.844</Modified>
+      <Modified>2023-07-03T17:09:51.194</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\hotro\OneDrive\Desktop\Prog._Assignments\C#_Full-App_Dev\PracPanther1\PP_MAUIApp\obj\Debug\net7.0-windows10.0.19041.0\win10-x64\resizetizer\f\OpenSans-Regular.ttf">
       <PackagePath>OpenSans-Regular.ttf</PackagePath>
@@ -971,207 +971,207 @@
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\hotro\OneDrive\Desktop\Prog._Assignments\C#_Full-App_Dev\PracPanther1\PP_MAUIApp\obj\Debug\net7.0-windows10.0.19041.0\win10-x64\resizetizer\r\appicon.ico">
       <PackagePath>appicon.ico</PackagePath>
-      <Modified>2023-06-17T20:19:15.866</Modified>
+      <Modified>2023-07-03T17:09:51.252</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\hotro\OneDrive\Desktop\Prog._Assignments\C#_Full-App_Dev\PracPanther1\PP_MAUIApp\obj\Debug\net7.0-windows10.0.19041.0\win10-x64\resizetizer\r\appiconLargeTile.scale-100.png">
       <PackagePath>appiconLargeTile.scale-100.png</PackagePath>
-      <Modified>2023-06-17T20:19:16.156</Modified>
+      <Modified>2023-07-03T17:09:51.509</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\hotro\OneDrive\Desktop\Prog._Assignments\C#_Full-App_Dev\PracPanther1\PP_MAUIApp\obj\Debug\net7.0-windows10.0.19041.0\win10-x64\resizetizer\r\appiconLargeTile.scale-125.png">
       <PackagePath>appiconLargeTile.scale-125.png</PackagePath>
-      <Modified>2023-06-17T20:19:16.168</Modified>
+      <Modified>2023-07-03T17:09:51.520</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\hotro\OneDrive\Desktop\Prog._Assignments\C#_Full-App_Dev\PracPanther1\PP_MAUIApp\obj\Debug\net7.0-windows10.0.19041.0\win10-x64\resizetizer\r\appiconLargeTile.scale-150.png">
       <PackagePath>appiconLargeTile.scale-150.png</PackagePath>
-      <Modified>2023-06-17T20:19:16.182</Modified>
+      <Modified>2023-07-03T17:09:51.530</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\hotro\OneDrive\Desktop\Prog._Assignments\C#_Full-App_Dev\PracPanther1\PP_MAUIApp\obj\Debug\net7.0-windows10.0.19041.0\win10-x64\resizetizer\r\appiconLargeTile.scale-200.png">
       <PackagePath>appiconLargeTile.scale-200.png</PackagePath>
-      <Modified>2023-06-17T20:19:16.207</Modified>
+      <Modified>2023-07-03T17:09:51.546</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\hotro\OneDrive\Desktop\Prog._Assignments\C#_Full-App_Dev\PracPanther1\PP_MAUIApp\obj\Debug\net7.0-windows10.0.19041.0\win10-x64\resizetizer\r\appiconLargeTile.scale-400.png">
       <PackagePath>appiconLargeTile.scale-400.png</PackagePath>
-      <Modified>2023-06-17T20:19:16.282</Modified>
+      <Modified>2023-07-03T17:09:51.604</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\hotro\OneDrive\Desktop\Prog._Assignments\C#_Full-App_Dev\PracPanther1\PP_MAUIApp\obj\Debug\net7.0-windows10.0.19041.0\win10-x64\resizetizer\r\appiconLogo.altform-lightunplated_targetsize-16.png">
       <PackagePath>appiconLogo.altform-lightunplated_targetsize-16.png</PackagePath>
-      <Modified>2023-06-17T20:19:15.955</Modified>
+      <Modified>2023-07-03T17:09:51.326</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\hotro\OneDrive\Desktop\Prog._Assignments\C#_Full-App_Dev\PracPanther1\PP_MAUIApp\obj\Debug\net7.0-windows10.0.19041.0\win10-x64\resizetizer\r\appiconLogo.altform-lightunplated_targetsize-24.png">
       <PackagePath>appiconLogo.altform-lightunplated_targetsize-24.png</PackagePath>
-      <Modified>2023-06-17T20:19:15.958</Modified>
+      <Modified>2023-07-03T17:09:51.329</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\hotro\OneDrive\Desktop\Prog._Assignments\C#_Full-App_Dev\PracPanther1\PP_MAUIApp\obj\Debug\net7.0-windows10.0.19041.0\win10-x64\resizetizer\r\appiconLogo.altform-lightunplated_targetsize-256.png">
       <PackagePath>appiconLogo.altform-lightunplated_targetsize-256.png</PackagePath>
-      <Modified>2023-06-17T20:19:15.973</Modified>
+      <Modified>2023-07-03T17:09:51.343</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\hotro\OneDrive\Desktop\Prog._Assignments\C#_Full-App_Dev\PracPanther1\PP_MAUIApp\obj\Debug\net7.0-windows10.0.19041.0\win10-x64\resizetizer\r\appiconLogo.altform-lightunplated_targetsize-32.png">
       <PackagePath>appiconLogo.altform-lightunplated_targetsize-32.png</PackagePath>
-      <Modified>2023-06-17T20:19:15.963</Modified>
+      <Modified>2023-07-03T17:09:51.332</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\hotro\OneDrive\Desktop\Prog._Assignments\C#_Full-App_Dev\PracPanther1\PP_MAUIApp\obj\Debug\net7.0-windows10.0.19041.0\win10-x64\resizetizer\r\appiconLogo.altform-lightunplated_targetsize-48.png">
       <PackagePath>appiconLogo.altform-lightunplated_targetsize-48.png</PackagePath>
-      <Modified>2023-06-17T20:19:15.967</Modified>
+      <Modified>2023-07-03T17:09:51.335</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\hotro\OneDrive\Desktop\Prog._Assignments\C#_Full-App_Dev\PracPanther1\PP_MAUIApp\obj\Debug\net7.0-windows10.0.19041.0\win10-x64\resizetizer\r\appiconLogo.altform-unplated_targetsize-16.png">
       <PackagePath>appiconLogo.altform-unplated_targetsize-16.png</PackagePath>
-      <Modified>2023-06-17T20:19:15.935</Modified>
+      <Modified>2023-07-03T17:09:51.305</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\hotro\OneDrive\Desktop\Prog._Assignments\C#_Full-App_Dev\PracPanther1\PP_MAUIApp\obj\Debug\net7.0-windows10.0.19041.0\win10-x64\resizetizer\r\appiconLogo.altform-unplated_targetsize-24.png">
       <PackagePath>appiconLogo.altform-unplated_targetsize-24.png</PackagePath>
-      <Modified>2023-06-17T20:19:15.938</Modified>
+      <Modified>2023-07-03T17:09:51.307</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\hotro\OneDrive\Desktop\Prog._Assignments\C#_Full-App_Dev\PracPanther1\PP_MAUIApp\obj\Debug\net7.0-windows10.0.19041.0\win10-x64\resizetizer\r\appiconLogo.altform-unplated_targetsize-256.png">
       <PackagePath>appiconLogo.altform-unplated_targetsize-256.png</PackagePath>
-      <Modified>2023-06-17T20:19:15.952</Modified>
+      <Modified>2023-07-03T17:09:51.322</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\hotro\OneDrive\Desktop\Prog._Assignments\C#_Full-App_Dev\PracPanther1\PP_MAUIApp\obj\Debug\net7.0-windows10.0.19041.0\win10-x64\resizetizer\r\appiconLogo.altform-unplated_targetsize-32.png">
       <PackagePath>appiconLogo.altform-unplated_targetsize-32.png</PackagePath>
-      <Modified>2023-06-17T20:19:15.940</Modified>
+      <Modified>2023-07-03T17:09:51.311</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\hotro\OneDrive\Desktop\Prog._Assignments\C#_Full-App_Dev\PracPanther1\PP_MAUIApp\obj\Debug\net7.0-windows10.0.19041.0\win10-x64\resizetizer\r\appiconLogo.altform-unplated_targetsize-48.png">
       <PackagePath>appiconLogo.altform-unplated_targetsize-48.png</PackagePath>
-      <Modified>2023-06-17T20:19:15.944</Modified>
+      <Modified>2023-07-03T17:09:51.315</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\hotro\OneDrive\Desktop\Prog._Assignments\C#_Full-App_Dev\PracPanther1\PP_MAUIApp\obj\Debug\net7.0-windows10.0.19041.0\win10-x64\resizetizer\r\appiconLogo.scale-100.png">
       <PackagePath>appiconLogo.scale-100.png</PackagePath>
-      <Modified>2023-06-17T20:19:15.888</Modified>
+      <Modified>2023-07-03T17:09:51.264</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\hotro\OneDrive\Desktop\Prog._Assignments\C#_Full-App_Dev\PracPanther1\PP_MAUIApp\obj\Debug\net7.0-windows10.0.19041.0\win10-x64\resizetizer\r\appiconLogo.scale-125.png">
       <PackagePath>appiconLogo.scale-125.png</PackagePath>
-      <Modified>2023-06-17T20:19:15.893</Modified>
+      <Modified>2023-07-03T17:09:51.267</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\hotro\OneDrive\Desktop\Prog._Assignments\C#_Full-App_Dev\PracPanther1\PP_MAUIApp\obj\Debug\net7.0-windows10.0.19041.0\win10-x64\resizetizer\r\appiconLogo.scale-150.png">
       <PackagePath>appiconLogo.scale-150.png</PackagePath>
-      <Modified>2023-06-17T20:19:15.897</Modified>
+      <Modified>2023-07-03T17:09:51.270</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\hotro\OneDrive\Desktop\Prog._Assignments\C#_Full-App_Dev\PracPanther1\PP_MAUIApp\obj\Debug\net7.0-windows10.0.19041.0\win10-x64\resizetizer\r\appiconLogo.scale-200.png">
       <PackagePath>appiconLogo.scale-200.png</PackagePath>
-      <Modified>2023-06-17T20:19:15.902</Modified>
+      <Modified>2023-07-03T17:09:51.273</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\hotro\OneDrive\Desktop\Prog._Assignments\C#_Full-App_Dev\PracPanther1\PP_MAUIApp\obj\Debug\net7.0-windows10.0.19041.0\win10-x64\resizetizer\r\appiconLogo.scale-400.png">
       <PackagePath>appiconLogo.scale-400.png</PackagePath>
-      <Modified>2023-06-17T20:19:15.908</Modified>
+      <Modified>2023-07-03T17:09:51.280</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\hotro\OneDrive\Desktop\Prog._Assignments\C#_Full-App_Dev\PracPanther1\PP_MAUIApp\obj\Debug\net7.0-windows10.0.19041.0\win10-x64\resizetizer\r\appiconLogo.targetsize-16.png">
       <PackagePath>appiconLogo.targetsize-16.png</PackagePath>
-      <Modified>2023-06-17T20:19:15.911</Modified>
+      <Modified>2023-07-03T17:09:51.284</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\hotro\OneDrive\Desktop\Prog._Assignments\C#_Full-App_Dev\PracPanther1\PP_MAUIApp\obj\Debug\net7.0-windows10.0.19041.0\win10-x64\resizetizer\r\appiconLogo.targetsize-24.png">
       <PackagePath>appiconLogo.targetsize-24.png</PackagePath>
-      <Modified>2023-06-17T20:19:15.915</Modified>
+      <Modified>2023-07-03T17:09:51.286</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\hotro\OneDrive\Desktop\Prog._Assignments\C#_Full-App_Dev\PracPanther1\PP_MAUIApp\obj\Debug\net7.0-windows10.0.19041.0\win10-x64\resizetizer\r\appiconLogo.targetsize-256.png">
       <PackagePath>appiconLogo.targetsize-256.png</PackagePath>
-      <Modified>2023-06-17T20:19:15.931</Modified>
+      <Modified>2023-07-03T17:09:51.302</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\hotro\OneDrive\Desktop\Prog._Assignments\C#_Full-App_Dev\PracPanther1\PP_MAUIApp\obj\Debug\net7.0-windows10.0.19041.0\win10-x64\resizetizer\r\appiconLogo.targetsize-32.png">
       <PackagePath>appiconLogo.targetsize-32.png</PackagePath>
-      <Modified>2023-06-17T20:19:15.918</Modified>
+      <Modified>2023-07-03T17:09:51.289</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\hotro\OneDrive\Desktop\Prog._Assignments\C#_Full-App_Dev\PracPanther1\PP_MAUIApp\obj\Debug\net7.0-windows10.0.19041.0\win10-x64\resizetizer\r\appiconLogo.targetsize-48.png">
       <PackagePath>appiconLogo.targetsize-48.png</PackagePath>
-      <Modified>2023-06-17T20:19:15.922</Modified>
+      <Modified>2023-07-03T17:09:51.293</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\hotro\OneDrive\Desktop\Prog._Assignments\C#_Full-App_Dev\PracPanther1\PP_MAUIApp\obj\Debug\net7.0-windows10.0.19041.0\win10-x64\resizetizer\r\appiconMediumTile.scale-100.png">
       <PackagePath>appiconMediumTile.scale-100.png</PackagePath>
-      <Modified>2023-06-17T20:19:16.027</Modified>
+      <Modified>2023-07-03T17:09:51.401</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\hotro\OneDrive\Desktop\Prog._Assignments\C#_Full-App_Dev\PracPanther1\PP_MAUIApp\obj\Debug\net7.0-windows10.0.19041.0\win10-x64\resizetizer\r\appiconMediumTile.scale-125.png">
       <PackagePath>appiconMediumTile.scale-125.png</PackagePath>
-      <Modified>2023-06-17T20:19:16.032</Modified>
+      <Modified>2023-07-03T17:09:51.407</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\hotro\OneDrive\Desktop\Prog._Assignments\C#_Full-App_Dev\PracPanther1\PP_MAUIApp\obj\Debug\net7.0-windows10.0.19041.0\win10-x64\resizetizer\r\appiconMediumTile.scale-150.png">
       <PackagePath>appiconMediumTile.scale-150.png</PackagePath>
-      <Modified>2023-06-17T20:19:16.038</Modified>
+      <Modified>2023-07-03T17:09:51.413</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\hotro\OneDrive\Desktop\Prog._Assignments\C#_Full-App_Dev\PracPanther1\PP_MAUIApp\obj\Debug\net7.0-windows10.0.19041.0\win10-x64\resizetizer\r\appiconMediumTile.scale-200.png">
       <PackagePath>appiconMediumTile.scale-200.png</PackagePath>
-      <Modified>2023-06-17T20:19:16.047</Modified>
+      <Modified>2023-07-03T17:09:51.421</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\hotro\OneDrive\Desktop\Prog._Assignments\C#_Full-App_Dev\PracPanther1\PP_MAUIApp\obj\Debug\net7.0-windows10.0.19041.0\win10-x64\resizetizer\r\appiconMediumTile.scale-400.png">
       <PackagePath>appiconMediumTile.scale-400.png</PackagePath>
-      <Modified>2023-06-17T20:19:16.073</Modified>
+      <Modified>2023-07-03T17:09:51.436</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\hotro\OneDrive\Desktop\Prog._Assignments\C#_Full-App_Dev\PracPanther1\PP_MAUIApp\obj\Debug\net7.0-windows10.0.19041.0\win10-x64\resizetizer\r\appiconSmallTile.scale-100.png">
       <PackagePath>appiconSmallTile.scale-100.png</PackagePath>
-      <Modified>2023-06-17T20:19:16.001</Modified>
+      <Modified>2023-07-03T17:09:51.375</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\hotro\OneDrive\Desktop\Prog._Assignments\C#_Full-App_Dev\PracPanther1\PP_MAUIApp\obj\Debug\net7.0-windows10.0.19041.0\win10-x64\resizetizer\r\appiconSmallTile.scale-125.png">
       <PackagePath>appiconSmallTile.scale-125.png</PackagePath>
-      <Modified>2023-06-17T20:19:16.005</Modified>
+      <Modified>2023-07-03T17:09:51.379</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\hotro\OneDrive\Desktop\Prog._Assignments\C#_Full-App_Dev\PracPanther1\PP_MAUIApp\obj\Debug\net7.0-windows10.0.19041.0\win10-x64\resizetizer\r\appiconSmallTile.scale-150.png">
       <PackagePath>appiconSmallTile.scale-150.png</PackagePath>
-      <Modified>2023-06-17T20:19:16.010</Modified>
+      <Modified>2023-07-03T17:09:51.384</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\hotro\OneDrive\Desktop\Prog._Assignments\C#_Full-App_Dev\PracPanther1\PP_MAUIApp\obj\Debug\net7.0-windows10.0.19041.0\win10-x64\resizetizer\r\appiconSmallTile.scale-200.png">
       <PackagePath>appiconSmallTile.scale-200.png</PackagePath>
-      <Modified>2023-06-17T20:19:16.014</Modified>
+      <Modified>2023-07-03T17:09:51.389</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\hotro\OneDrive\Desktop\Prog._Assignments\C#_Full-App_Dev\PracPanther1\PP_MAUIApp\obj\Debug\net7.0-windows10.0.19041.0\win10-x64\resizetizer\r\appiconSmallTile.scale-400.png">
       <PackagePath>appiconSmallTile.scale-400.png</PackagePath>
-      <Modified>2023-06-17T20:19:16.022</Modified>
+      <Modified>2023-07-03T17:09:51.396</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\hotro\OneDrive\Desktop\Prog._Assignments\C#_Full-App_Dev\PracPanther1\PP_MAUIApp\obj\Debug\net7.0-windows10.0.19041.0\win10-x64\resizetizer\r\appiconStoreLogo.scale-100.png">
       <PackagePath>appiconStoreLogo.scale-100.png</PackagePath>
-      <Modified>2023-06-17T20:19:15.977</Modified>
+      <Modified>2023-07-03T17:09:51.351</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\hotro\OneDrive\Desktop\Prog._Assignments\C#_Full-App_Dev\PracPanther1\PP_MAUIApp\obj\Debug\net7.0-windows10.0.19041.0\win10-x64\resizetizer\r\appiconStoreLogo.scale-125.png">
       <PackagePath>appiconStoreLogo.scale-125.png</PackagePath>
-      <Modified>2023-06-17T20:19:15.981</Modified>
+      <Modified>2023-07-03T17:09:51.354</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\hotro\OneDrive\Desktop\Prog._Assignments\C#_Full-App_Dev\PracPanther1\PP_MAUIApp\obj\Debug\net7.0-windows10.0.19041.0\win10-x64\resizetizer\r\appiconStoreLogo.scale-150.png">
       <PackagePath>appiconStoreLogo.scale-150.png</PackagePath>
-      <Modified>2023-06-17T20:19:15.985</Modified>
+      <Modified>2023-07-03T17:09:51.358</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\hotro\OneDrive\Desktop\Prog._Assignments\C#_Full-App_Dev\PracPanther1\PP_MAUIApp\obj\Debug\net7.0-windows10.0.19041.0\win10-x64\resizetizer\r\appiconStoreLogo.scale-200.png">
       <PackagePath>appiconStoreLogo.scale-200.png</PackagePath>
-      <Modified>2023-06-17T20:19:15.989</Modified>
+      <Modified>2023-07-03T17:09:51.364</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\hotro\OneDrive\Desktop\Prog._Assignments\C#_Full-App_Dev\PracPanther1\PP_MAUIApp\obj\Debug\net7.0-windows10.0.19041.0\win10-x64\resizetizer\r\appiconStoreLogo.scale-400.png">
       <PackagePath>appiconStoreLogo.scale-400.png</PackagePath>
-      <Modified>2023-06-17T20:19:15.996</Modified>
+      <Modified>2023-07-03T17:09:51.372</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\hotro\OneDrive\Desktop\Prog._Assignments\C#_Full-App_Dev\PracPanther1\PP_MAUIApp\obj\Debug\net7.0-windows10.0.19041.0\win10-x64\resizetizer\r\appiconWideTile.scale-100.png">
       <PackagePath>appiconWideTile.scale-100.png</PackagePath>
-      <Modified>2023-06-17T20:19:16.081</Modified>
+      <Modified>2023-07-03T17:09:51.440</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\hotro\OneDrive\Desktop\Prog._Assignments\C#_Full-App_Dev\PracPanther1\PP_MAUIApp\obj\Debug\net7.0-windows10.0.19041.0\win10-x64\resizetizer\r\appiconWideTile.scale-125.png">
       <PackagePath>appiconWideTile.scale-125.png</PackagePath>
-      <Modified>2023-06-17T20:19:16.088</Modified>
+      <Modified>2023-07-03T17:09:51.447</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\hotro\OneDrive\Desktop\Prog._Assignments\C#_Full-App_Dev\PracPanther1\PP_MAUIApp\obj\Debug\net7.0-windows10.0.19041.0\win10-x64\resizetizer\r\appiconWideTile.scale-150.png">
       <PackagePath>appiconWideTile.scale-150.png</PackagePath>
-      <Modified>2023-06-17T20:19:16.096</Modified>
+      <Modified>2023-07-03T17:09:51.455</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\hotro\OneDrive\Desktop\Prog._Assignments\C#_Full-App_Dev\PracPanther1\PP_MAUIApp\obj\Debug\net7.0-windows10.0.19041.0\win10-x64\resizetizer\r\appiconWideTile.scale-200.png">
       <PackagePath>appiconWideTile.scale-200.png</PackagePath>
-      <Modified>2023-06-17T20:19:16.108</Modified>
+      <Modified>2023-07-03T17:09:51.467</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\hotro\OneDrive\Desktop\Prog._Assignments\C#_Full-App_Dev\PracPanther1\PP_MAUIApp\obj\Debug\net7.0-windows10.0.19041.0\win10-x64\resizetizer\r\appiconWideTile.scale-400.png">
       <PackagePath>appiconWideTile.scale-400.png</PackagePath>
-      <Modified>2023-06-17T20:19:16.145</Modified>
+      <Modified>2023-07-03T17:09:51.496</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\hotro\OneDrive\Desktop\Prog._Assignments\C#_Full-App_Dev\PracPanther1\PP_MAUIApp\obj\Debug\net7.0-windows10.0.19041.0\win10-x64\resizetizer\r\dotnet_bot.scale-100.png">
       <PackagePath>dotnet_bot.scale-100.png</PackagePath>
-      <Modified>2023-06-17T20:19:15.868</Modified>
+      <Modified>2023-07-03T17:09:51.287</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\hotro\OneDrive\Desktop\Prog._Assignments\C#_Full-App_Dev\PracPanther1\PP_MAUIApp\obj\Debug\net7.0-windows10.0.19041.0\win10-x64\resizetizer\r\dotnet_bot.scale-125.png">
       <PackagePath>dotnet_bot.scale-125.png</PackagePath>
-      <Modified>2023-06-17T20:19:15.882</Modified>
+      <Modified>2023-07-03T17:09:51.299</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\hotro\OneDrive\Desktop\Prog._Assignments\C#_Full-App_Dev\PracPanther1\PP_MAUIApp\obj\Debug\net7.0-windows10.0.19041.0\win10-x64\resizetizer\r\dotnet_bot.scale-150.png">
       <PackagePath>dotnet_bot.scale-150.png</PackagePath>
-      <Modified>2023-06-17T20:19:15.898</Modified>
+      <Modified>2023-07-03T17:09:51.313</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\hotro\OneDrive\Desktop\Prog._Assignments\C#_Full-App_Dev\PracPanther1\PP_MAUIApp\obj\Debug\net7.0-windows10.0.19041.0\win10-x64\resizetizer\r\dotnet_bot.scale-200.png">
       <PackagePath>dotnet_bot.scale-200.png</PackagePath>
-      <Modified>2023-06-17T20:19:15.920</Modified>
+      <Modified>2023-07-03T17:09:51.336</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\hotro\OneDrive\Desktop\Prog._Assignments\C#_Full-App_Dev\PracPanther1\PP_MAUIApp\obj\Debug\net7.0-windows10.0.19041.0\win10-x64\resizetizer\r\dotnet_bot.scale-400.png">
       <PackagePath>dotnet_bot.scale-400.png</PackagePath>
-      <Modified>2023-06-17T20:19:15.976</Modified>
+      <Modified>2023-07-03T17:09:51.397</Modified>
     </AppxPackagedFile>
   </ItemGroup>
   <ItemGroup>

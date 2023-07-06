@@ -4,9 +4,16 @@
              x:Class="PP.MAUIApp.Views.AddClientView"
              Title="AddClientView">
     <VerticalStackLayout>
-        <Label 
-            Text="Welcome to .NET MAUI!"
-            VerticalOptions="Center" 
-            HorizontalOptions="Center" />
+        <Grid>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition />
+                <ColumnDefinition Width="6*"/>
+                <ColumnDefinition />
+            </Grid.ColumnDefinitions>
+            <Label Grid.Column="0" Text="Add name here:"/>
+            <Entry Grid.Column="1" Text="{Binding Path=Model.Name}"/>
+            <Button Grid.Column="2" Text="Add" Clicked="AddClicked"/>
+        </Grid>
+        <Button Text="Go Back" Clicked="GoBackClicked"/>
     </VerticalStackLayout>
 </ContentPage>

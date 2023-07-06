@@ -6,6 +6,7 @@ using System.Linq;
 using System.Runtime.CompilerServices;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Input;
 using PP_Library.Models;
 using PP_Library.Services;
 
@@ -20,13 +21,8 @@ namespace PP.MAUIApp.ViewModels
         {
             get
             {
-                /*if (string.IsNullOrEmpty(Query))
-                {
-                    return new ObservableCollection<ClientViewModel>
-                        (ProjLinker.Current.Clients);
-                }*/
                 return new ObservableCollection<ClientViewModel>
-                        (ProjLinker.Current.Clients.Select(c => new ClientViewModel(c)).ToList());
+                       (ProjLinker.Current.Search(Query).Select(c => new ClientViewModel(c)).ToList());
             }
         }
 

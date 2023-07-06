@@ -18,6 +18,12 @@
     <MauiXaml Update="Views\AddClientView.xaml">
       <SubType>Designer</SubType>
     </MauiXaml>
+    <MauiXaml Update="Views\AddEmployee.xaml">
+      <SubType>Designer</SubType>
+    </MauiXaml>
+    <MauiXaml Update="Views\AddProjectView.xaml">
+      <SubType>Designer</SubType>
+    </MauiXaml>
     <MauiXaml Update="Views\ClientPage.xaml">
       <SubType>Designer</SubType>
     </MauiXaml>
@@ -31,6 +37,24 @@
       <SubType>Designer</SubType>
     </MauiXaml>
     <MauiXaml Update="Views\EditClientView.xaml">
+      <SubType>Designer</SubType>
+    </MauiXaml>
+    <MauiXaml Update="Views\ClientProjsView.xaml">
+      <SubType>Designer</SubType>
+    </MauiXaml>
+    <MauiXaml Update="Views\EditEmployee.xaml">
+      <SubType>Designer</SubType>
+    </MauiXaml>
+    <MauiXaml Update="Views\EditProjectView.xaml">
+      <SubType>Designer</SubType>
+    </MauiXaml>
+    <MauiXaml Update="Views\EmployeePage.xaml">
+      <SubType>Designer</SubType>
+    </MauiXaml>
+    <MauiXaml Update="Views\TimeDetailPage.xaml">
+      <SubType>Designer</SubType>
+    </MauiXaml>
+    <MauiXaml Update="Views\TimePage.xaml">
       <SubType>Designer</SubType>
     </MauiXaml>
   </ItemGroup>

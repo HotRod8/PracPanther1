@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:vm="clr-namespace:PP.MAUIApp.ViewModels"
+             x:Class="PP.MAUIApp.Views.ClientProjsView"
+             Title="Projects of the Client"
+             NavigatedTo="OnArrived">
+
+    <ScrollView>
+        <VerticalStackLayout>
+
+            <Grid >
+                <Grid.ColumnDefinitions >
+                    <ColumnDefinition />
+                    <ColumnDefinition />
+                    <ColumnDefinition />
+                    <ColumnDefinition />
+                </Grid.ColumnDefinitions >
+                <Button Text = "Add Project" Grid.Column = "0" Clicked = "AddClicked"/>
+                <Button Text = "Close All Projects" Grid.Column = "1" Clicked = "CloseAllClicked"/>
+                <Button Text = "Delete All Projects" Grid.Column = "2" Clicked = "DeleteAllClicked"/>
+                <Button Text = "Go Back" Grid.Column = "3" Clicked = "GoBackClicked"/>
+            </Grid >
+
+            <Grid >
+                <ListView
+                ItemsSource = "{Binding Path=Projects, Mode=TwoWay}"
+                SelectedItem = "{Binding Path=SelectedProject, Mode=TwoWay}"
+                >
+                    <ListView.ItemTemplate>
+                        <DataTemplate>
+                            <ViewCell>
+                                <Grid >
+                                    <Grid.ColumnDefinitions >
+                                        <ColumnDefinition Width="6*"/>
+                                        <ColumnDefinition />
+                                        <ColumnDefinition />
+                                        <ColumnDefinition />
+                                    </Grid.ColumnDefinitions >
+                                    <Label Grid.Column="0" Text="{Binding Path=Display}"></Label>
+                                    <Button Grid.Column = "1" 
+                                            Text = "Close Project" 
+                                            Command="{Binding Path=CloseCommand}" 
+                                            CommandParameter="{Binding}"
+                                            Clicked="CloseClicked"></Button >
+                                    <Button Grid.Column = "2" 
+                                            Text = "Edit Project" 
+                                            Command="{Binding Path=EditCommand}" 
+                                            CommandParameter="{Binding}"
+                                            Clicked="EditClicked"></Button >
+                                    <Button Grid.Column = "3" 
+                                            Text = "Delete Project" 
+                                            Command="{Binding Path=DeleteCommand}" 
+                                            CommandParameter="{Binding}"
+                                            Clicked="DeleteClicked"></Button >
+                                </Grid >
+                            </ViewCell>
+                        </DataTemplate>
+                    </ListView.ItemTemplate>
+                </ListView >
+            </Grid >
+
+            <Grid >
+                <Grid.ColumnDefinitions >
+                    <ColumnDefinition Width = "7*" />
+                    <ColumnDefinition />
+                    <ColumnDefinition />
+                </Grid.ColumnDefinitions >
+                <Entry Grid.Column = "0" Text = "{Binding Path=Query}" ></Entry >
+                <Button Grid.Column = "1" Text = "Search" Clicked = "ClickedSearch" ></Button >
+                <Button Grid.Column = "2" Text = "View Bills" Clicked="BillsClicked"/>
+                <!--When finished executing "View Bills", display all project bills below-->
+            </Grid >
+
+        </VerticalStackLayout>
+    </ScrollView>
+</ContentPage>
