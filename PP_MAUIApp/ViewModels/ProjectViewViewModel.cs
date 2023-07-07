@@ -65,5 +65,10 @@ namespace PP.MAUIApp.ViewModels
             //same as NotifyPropertyChanged("Projects");
             NotifyPropertyChanged(nameof(Projects));
         }
+        public void CreateAllBills()
+        {
+            var AllProjs = ProjService.Current.GetAllProjs(Client.Id);
+            var ProjTimes = TimeService.Current.Times;
+        }
     }
 }

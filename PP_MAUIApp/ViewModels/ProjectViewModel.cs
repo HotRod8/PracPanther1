@@ -39,7 +39,9 @@ namespace PP.MAUIApp.ViewModels
         public ICommand CloseCommand { get; private set; }
         public ICommand DeleteCommand { get; private set; }
         public ICommand EditCommand { get; private set; }
+        public ICommand NewBillCommand { get; private set; }
         public ICommand TimerCommand { get; private set; }
+        
 
         private void ExecuteClose(int clientId, int id)
         {
@@ -56,17 +58,24 @@ namespace PP.MAUIApp.ViewModels
             //Can use this approach or a different approach
             Shell.Current.GoToAsync($"//EditProject?clientId={id}&projId={projId}");
         }
-    /*  private void ExecuteTimer()
+        private void CreateNewBill(int clientId, int id)
         {
-            var window = new Window(new TimerView(Model.Id))
+            Project temp = ProjService.Current.GetProj(clientId, id);
+            IEnumerable<Time> list = TimeService.Current.Times;
+            IEnumerable<Time> templist = list.Where(p => p.ProjectId == temp.Id && p.ClientId == temp.ClientId).ToList();
+            BillService.Current.MakeBill(templist);
+        }
+        /*  private void ExecuteTimer()
             {
-                Width = 250,
-                Height = 350,
-                X = 0,
-                Y = 0
-            };
-            Application.Current.OpenWindow(window);
-        }*/
+                var window = new Window(new TimerView(Model.Id))
+                {
+                    Width = 250,
+                    Height = 350,
+                    X = 0,
+                    Y = 0
+                };
+                Application.Current.OpenWindow(window);
+            }*/
         private void SetupCommands()
         {
             CloseCommand = new Command(
@@ -75,8 +84,9 @@ namespace PP.MAUIApp.ViewModels
                 (c) => ExecuteDelete((c as ProjectViewModel).Blueprint.ClientId, (c as ProjectViewModel).Blueprint.Id));
             EditCommand = new Command(
                 (c) => ExecuteEdit((c as ProjectViewModel).Blueprint.ClientId, (c as ProjectViewModel).Blueprint.Id));
-        //    AddCommand = new Command(ExecuteAdd);
-        //    TimerCommand = new Command(ExecuteTimer);
+            NewBillCommand = new Command(
+                (c) => CreateNewBill((c as ProjectViewModel).Blueprint.ClientId, (c as ProjectViewModel).Blueprint.Id));
+            //    TimerCommand = new Command(ExecuteTimer);
         }
 
         //Constructors must finish before outside variables are set.
@@ -115,10 +125,6 @@ namespace PP.MAUIApp.ViewModels
         {
             Blueprint = ProjService.Current.GetProj(Client_Id, proj_Id);
             ProjService.Current.Edit(Blueprint);
-        }
-        public void ViewBills()
-        {
-            TimeService.Current.Bill(proj_Id);
         }
     }
 }

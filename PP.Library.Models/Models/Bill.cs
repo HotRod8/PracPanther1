@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace PP_Library.Models
 {
-    public class Bill : Time
+    public class Bill
     {
         /*You must have a TotalAmount property that shows the amount of the bill as calculated 
          *by multiplying the rate of the employee on a time entry by the number of hours on 
@@ -17,7 +17,7 @@ namespace PP_Library.Models
         public decimal TotalAmount { get; set; }
         public DateTime DueDate { get; set; }
         //To take in multiple time instances
-        public List<Time> TimeList { get; set; }
+        public IEnumerable<Time> TimeList { get; set; }
         //Project class is connected throught the Time class (Time.ProjectId)
         public Bill() 
         {

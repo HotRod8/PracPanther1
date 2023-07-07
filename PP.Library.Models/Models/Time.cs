@@ -20,12 +20,16 @@ namespace PP_Library.Models
         //delete multiple Time entries at once.
         public Time() 
         {
+            ClientId = 0;
             ProjectId = 0;
             EmployeeId = 0;
             Date = DateTime.Now;
             Narrative = "";
             Hours = 0;
         }
+        //Because ProjectId is only unique per client,
+        //we must take in the ClientId to connect them
+        public int ClientId { get; set; }
         public int ProjectId { get; set; }
         public int EmployeeId { get; set; }
         public DateTime Date { get; set; }

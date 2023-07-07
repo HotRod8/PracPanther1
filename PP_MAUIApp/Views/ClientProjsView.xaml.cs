@@ -63,7 +63,14 @@ namespace PP.MAUIApp.Views
 
         private void BillsClicked(object sender, EventArgs e)
         {
+            (BindingContext as ProjectViewViewModel).RefreshProjectList();
+        }
 
+        private void AllBillsClicked(object sender, EventArgs e)
+        {
+            var ProjTimes = TimeService.Current.Times;
+            BillService.Current.MakeAllBills(ProjTimes);
+            (BindingContext as ProjectViewViewModel).RefreshProjectList();
         }
     }
 }

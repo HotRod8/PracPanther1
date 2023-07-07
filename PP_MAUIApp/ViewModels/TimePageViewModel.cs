@@ -30,11 +30,11 @@ namespace PP.MAUIApp.ViewModels
             }
         }
 
-        public TimePageViewModel(int empId, int projId)
+        public TimePageViewModel(int empId, int projId, int cliId)
         {
             if ((empId > 0)&&(projId > 0))
             {
-                Record = TimeService.Current.Get(empId, projId);
+                Record = TimeService.Current.Get(empId, projId, cliId);
             }
             else
             {

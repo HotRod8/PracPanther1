@@ -34,15 +34,17 @@ namespace PP_Library.Services
         {
             workTime = new List<Time>
             {
-                new Time {EmployeeId = 300, ProjectId = 3, Date = DateTime.Today, Hours = 8, Narrative = "I am #1"},
-                new Time {EmployeeId = 400, ProjectId = 9, Date = DateTime.Today, Hours = 12, Narrative = "I am #2"},
-                new Time {EmployeeId = 500, ProjectId = 21, Date = DateTime.Today, Hours = 2, Narrative = "I am #3"}
+                new Time {EmployeeId = 300, ProjectId = 1, ClientId = 3, Date = DateTime.Today, Hours = 8, Narrative = "I am #1"},
+                new Time {EmployeeId = 400, ProjectId = 2, ClientId = 3, Date = DateTime.Today, Hours = 12, Narrative = "I am #2"},
+                new Time {EmployeeId = 500, ProjectId = 3, ClientId = 3, Date = DateTime.Today, Hours = 2, Narrative = "I am #3"}
             };
         }
         public List<Time> Times { get { return workTime; } }
-        public Time? Get(int emplid, int projid)
+        public Time? Get(int emplid, int projid, int clientid)
         {
-            return workTime.FirstOrDefault(e => (e.EmployeeId == emplid) && (e.ProjectId == projid));
+            var test = ProjService.Current.GetProj(clientid, projid);
+            if (test == null) { return null; }
+            return workTime.FirstOrDefault(e => (e.EmployeeId == emplid) && (e.ProjectId == projid) && (e.ClientId == clientid));
         }
 
         public List<Time> Search(string query)
@@ -55,23 +57,7 @@ namespace PP_Library.Services
         {
             if (Time != null)
             {
-                if (Time.EmployeeId == 0) { Time.EmployeeId = LastEmplId + 1; }
-                if (Time.ProjectId == 0) { Time.ProjectId = LastProjId + 1; }
                 workTime.Add(Time);
-            }
-        }
-        private int LastEmplId
-        {
-            get
-            {
-                return Times.Any() ? Times.Select(c => c.EmployeeId).Max() : 0;
-            }
-        }
-        private int LastProjId
-        {
-            get
-            {
-                return Times.Any() ? Times.Select(c => c.ProjectId).Max() : 0;
             }
         }
 
@@ -83,25 +69,21 @@ namespace PP_Library.Services
         }
         public void Edit(Time toUpdate)
         {
-            var UpdateTime = Current.Get(toUpdate.EmployeeId, toUpdate.ProjectId);
+            var UpdateTime = Current.Get(toUpdate.EmployeeId, toUpdate.ProjectId, toUpdate.ClientId);
             if (UpdateTime != null)
             {
                 UpdateTime.Hours = toUpdate.Hours;
                 UpdateTime.Narrative = toUpdate.Narrative;
             }
         }
-        public void Delete(int eid, int pid)
+        public void Delete(int eid, int pid, int cid)
         {
-            var hrsNegated = Get(eid,pid);
+            var hrsNegated = Get(eid,pid,cid);
             if (hrsNegated != null) { workTime.Remove(hrsNegated); }
         }
         public void Delete(Time c)
         {
-            Delete(c.EmployeeId, c.ProjectId);
-        }
-        public void Bill(int pid)
-        {
-            
+            Delete(c.EmployeeId, c.ProjectId, c.ClientId);
         }
     }
 }

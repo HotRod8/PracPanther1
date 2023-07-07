@@ -6,10 +6,12 @@ namespace PP.MAUIApp.Views
 {
     [QueryProperty ("EmplID","EmployeeID")]
     [QueryProperty ("ProjID","ProjectID")]
+    [QueryProperty ("Client_Id","ClientId")]
     public partial class TimePage : ContentPage
     {
         public int EmplID { get; set; }
         public int ProjID { get; set; }
+        public int Client_Id { get; set; }
         public TimePage()
         {
             InitializeComponent();
@@ -17,13 +19,13 @@ namespace PP.MAUIApp.Views
 
         private void OnArrived(object sender, NavigatedToEventArgs e)
         {
-            BindingContext = new TimePageViewModel(EmplID, ProjID);
+            BindingContext = new TimePageViewModel(EmplID, ProjID, Client_Id);
             (BindingContext as TimePageViewModel).RefreshTimeList();
         }
 
         private void AddClicked(object sender, EventArgs e)
         {
-            Shell.Current.GoToAsync($"//TimeDetailPage?emplId={0}&projId={0}");
+            Shell.Current.GoToAsync($"//TimeDetailPage?emplId={EmplID}&projId={ProjID}&clientId={Client_Id}");
         }
 
         private void GoBackClicked(object sender, EventArgs e)

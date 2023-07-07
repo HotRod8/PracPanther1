@@ -15,8 +15,10 @@ namespace PP.MAUIApp.ViewModels
 {
     [QueryProperty(nameof(Employ_Id), "EmpID")]
     [QueryProperty(nameof(Proj_Id), "ProjID")]
+    [QueryProperty(nameof(Client_Id), "ClientID")] 
     public class TimeViewModel
     {
+        public int Client_Id { get; set; }
         private int employ_Id;
         public int Employ_Id
         {
@@ -49,6 +51,20 @@ namespace PP.MAUIApp.ViewModels
         }
         public Time Clock { get; set; }
 
+        public ObservableCollection<ClientViewModel> Clients
+        {
+            get
+            {
+                //if there is no client, we have nothing to return yet
+                if (Clock == null || Clock.ClientId == 0)
+                {
+                    return new ObservableCollection<ClientViewModel>();
+                }
+                return new ObservableCollection<ClientViewModel>(ProjLinker
+                    .Current.Clients.Where(p => p.Id == Clock.ClientId)
+                    .Select(r => new ClientViewModel(r)));
+            }
+        }
         public ObservableCollection<ProjectViewModel> Projects
         {
             get
@@ -94,7 +110,7 @@ namespace PP.MAUIApp.ViewModels
 
         private void ExecuteDelete(int empId, int projid)
         {
-            Time temp = TimeService.Current.Get(empId, projid);
+            Time temp = TimeService.Current.Get(empId, projid, Client_Id);
             TimeService.Current.Delete(temp);
         }
         private void ExecuteEdit(int empid, int projId)
@@ -135,11 +151,12 @@ namespace PP.MAUIApp.ViewModels
             SetupCommands();
         }
         //Need to find a way to get the selected Time's ID
-        public TimeViewModel(int empId, int projId)
+        public TimeViewModel(int empId, int projId, int cliId)
         {
             Employ_Id = empId;
-            Proj_Id = projId;
-            Clock = TimeService.Current.Get(Employ_Id, Proj_Id);
+            Proj_Id = projId; 
+            Client_Id = cliId;
+            Clock = TimeService.Current.Get(Employ_Id, Proj_Id, Client_Id);
             if (Clock == null) { Clock = new Time(); }
             SetupCommands();
         }
@@ -150,16 +167,25 @@ namespace PP.MAUIApp.ViewModels
             SetupCommands();
         }
 
-        public void AddorUpdate(int eid, int pid)
+        public void AddorUpdate(int eid, int pid, int cid)
         {
-            if(eid == 0 && pid == 0)
+            var test1 = ProjService.Current.Projects.
+                FirstOrDefault(p => p.Id == pid && p.ClientId == cid);
+            var test2 = EmployeeService.Current.Employees.FirstOrDefault(e => e.Id == eid);
+            var test3 = TimeService.Current.Times.
+                FirstOrDefault(t => t.ProjectId == pid && t.ClientId == cid && t.EmployeeId == eid);
+            if (test1 != null && test2 != null && test3 == null)
             {
                 TimeService.Current.Add(Clock);
+            }
+            else if((test1 == null || test2 == null) && test3 == null)
+            {
+                return;
             }
             else
             {
                 if (Clock == null) 
-                { Clock = TimeService.Current.Get(eid, pid); }
+                { Clock = TimeService.Current.Get(eid, pid, cid); }
                 TimeService.Current.Edit(Clock);
                 Clock = new Time();
             }
