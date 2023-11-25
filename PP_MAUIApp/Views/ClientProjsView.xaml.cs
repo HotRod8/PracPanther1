@@ -49,6 +49,10 @@ namespace PP.MAUIApp.Views
         {
             (BindingContext as ProjectViewViewModel).RefreshProjectList();
         }
+        private void OpenClicked(object sender, EventArgs e)
+        {
+            (BindingContext as ProjectViewViewModel).RefreshProjectList();
+        }
 
         private void CloseAllClicked(object sender, EventArgs e)
         {
@@ -63,13 +67,26 @@ namespace PP.MAUIApp.Views
 
         private void BillsClicked(object sender, EventArgs e)
         {
+            (BindingContext as ProjectViewViewModel).ShowOrHide = true;
             (BindingContext as ProjectViewViewModel).RefreshProjectList();
         }
 
         private void AllBillsClicked(object sender, EventArgs e)
         {
-            var ProjTimes = TimeService.Current.Times;
-            BillService.Current.MakeAllBills(ProjTimes);
+            (BindingContext as ProjectViewViewModel).ShowOrHide = true;
+            (BindingContext as ProjectViewViewModel).AllBills();
+            (BindingContext as ProjectViewViewModel).RefreshProjectList();
+        }
+
+        private void ViewBillsClicked(object sender, EventArgs e)
+        {
+            (BindingContext as ProjectViewViewModel).Open();
+            (BindingContext as ProjectViewViewModel).RefreshProjectList();
+        }
+
+        private void CloseBillsClicked(object sender, EventArgs e)
+        {
+            (BindingContext as ProjectViewViewModel).Close();
             (BindingContext as ProjectViewViewModel).RefreshProjectList();
         }
     }

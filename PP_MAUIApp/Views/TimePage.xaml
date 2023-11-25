@@ -31,12 +31,8 @@
                                         <ColumnDefinition />
                                         <ColumnDefinition />
                                     </Grid.ColumnDefinitions >
-                                    <Label Grid.Column="0" Text="{Binding Path=Display}"></Label>
-                                    <Button Grid.Column = "1" 
-                                            Text = "Edit Time Log" 
-                                            Command="{Binding Path=EditCommand}" 
-                                            CommandParameter="{Binding}"
-                                            Clicked="EditClicked"></Button >
+                                    <Label Grid.Column="0" Text="{Binding Path=Display}"/>
+                                    <Button Grid.Column = "1" Text = "Edit Time Log" Clicked="EditClicked"/>
                                     <Button Grid.Column = "2" 
                                             Text = "Delete Time Log" 
                                             Command="{Binding Path=DeleteCommand}" 

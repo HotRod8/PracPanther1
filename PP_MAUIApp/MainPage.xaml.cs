@@ -4,11 +4,11 @@ namespace PP.MAUIApp
 {
     public partial class MainPage : ContentPage
     {
-        //    int count = 0;
 
         public MainPage()
         {
             InitializeComponent();
+
         }
 
         //Direct the user to the same route in AppShell for a Client

@@ -324,3 +324,4 @@ C:\Users\hotro\OneDrive\Desktop\Prog._Assignments\C#_Full-App_Dev\PracPanther1\P
 C:\Users\hotro\OneDrive\Desktop\Prog._Assignments\C#_Full-App_Dev\PracPanther1\PP_MAUIApp\obj\Debug\net7.0-windows10.0.19041.0\win10-x64\qualifiers.txt.intermediate
 C:\Users\hotro\OneDrive\Desktop\Prog._Assignments\C#_Full-App_Dev\PracPanther1\PP_MAUIApp\obj\Debug\net7.0-windows10.0.19041.0\win10-x64\MultipleQualifiersPerDimensionFound.txt
 C:\Users\hotro\OneDrive\Desktop\Prog._Assignments\C#_Full-App_Dev\PracPanther1\PP_MAUIApp\obj\Debug\net7.0-windows10.0.19041.0\win10-x64\ProjectArchitectures.txt
+C:\Users\hotro\OneDrive\Desktop\Prog._Assignments\C#_Full-App_Dev\PracPanther1\PP_MAUIApp\bin\Debug\net7.0-windows10.0.19041.0\win10-x64\Newtonsoft.Json.dll

@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Input;
 using PP_Library.Models;
+using PP_Library.DTO;
 using PP_Library.Services;
 
 namespace PP.MAUIApp.ViewModels
@@ -22,13 +23,13 @@ namespace PP.MAUIApp.ViewModels
             get
             {
                 return new ObservableCollection<ClientViewModel>
-                       (ProjLinker.Current.Search(Query).Select(c => new ClientViewModel(c)).ToList());
+                       (ProjLinker.Current.Search(Query ?? string.Empty).Select(c => new ClientViewModel(c)).ToList());
             }
         }
 
         public string Query { get; set; }
 
-        public Client SelectedClient { get; set; }
+        public ClientDTO SelectedClient { get; set; }
 
         public event PropertyChangedEventHandler PropertyChanged;
 
@@ -44,16 +45,16 @@ namespace PP.MAUIApp.ViewModels
         }
 
         //Find a way to add a new Id, Name, and [Notes]. 
-        public void Add(Client client)
+        public void Add(ClientDTO client)
         {
-            ProjLinker.Current.Add(client);
+            ProjLinker.Current.AddOrUpdate(client);
             NotifyPropertyChanged("Clients");
         }
 
         public void Delete()
         {
             if (SelectedClient == null) {  return;  }
-            ProjLinker.Current.Delete(SelectedClient.Id);
+            ProjLinker.Current.Delete(SelectedClient);
             SelectedClient=null;
             NotifyPropertyChanged("Clients");
             NotifyPropertyChanged("SelectedClient");

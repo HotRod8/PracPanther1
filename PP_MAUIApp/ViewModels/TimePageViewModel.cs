@@ -15,7 +15,18 @@ namespace PP.MAUIApp.ViewModels
     {
         //We use an ObservableCollection to prevent some particular glitches that occur in 
         //here if we were to use List instead.
-        public Time Record { get; set; }
+        private Time track;
+        public Time Record 
+        {
+            get
+            {
+                return track;
+            }
+            set
+            {
+                track = value ?? new Time();
+            }
+        }
         public ObservableCollection<TimeViewModel> TimeLogs
         {
             get
@@ -30,17 +41,10 @@ namespace PP.MAUIApp.ViewModels
             }
         }
 
-        public TimePageViewModel(int empId, int projId, int cliId)
+        public TimePageViewModel()
         {
-            if ((empId > 0)&&(projId > 0))
-            {
-                Record = TimeService.Current.Get(empId, projId, cliId);
-            }
-            else
-            {
-                Record = new Time();
-            }
-
+            foreach (var item in TimeLogs) 
+            { Record = item.Clock; }
         }
 
         private string quer { get; set; }

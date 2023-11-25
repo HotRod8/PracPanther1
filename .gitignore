@@ -9,3 +9,16 @@
 /PP.Library.Models/obj
 /PP.CLI/bin/Debug/net7.0
 /PP.CLI/obj
+/PP.API/bin/Debug/net7.0
+/PP.API/obj
+/PP_MAUIApp/bin/Debug/net7.0-android
+/PP_MAUIApp/bin/Debug/net7.0-ios/iossimulator-x64
+/PP_MAUIApp/bin/Debug/net7.0-maccatalyst/maccatalyst-x64
+/PP_MAUIApp/obj/Debug/net7.0-android/android
+/PP_MAUIApp/obj/Debug/net7.0-android/app_shared_libraries
+/PP_MAUIApp/obj/Debug/net7.0-android/stamp
+/PP_MAUIApp/obj/Debug/net7.0-ios/iossimulator-x64/ref
+/PP_MAUIApp/obj/Debug/net7.0-ios/iossimulator-x64/refint
+/PP_MAUIApp/obj/Debug/net7.0-maccatalyst/maccatalyst-x64/ref
+/PP_MAUIApp/obj/Debug/net7.0-maccatalyst/maccatalyst-x64/refint
+/PP_MAUIApp/obj/Debug/net7.0-android/assets

@@ -1039,3 +1039,4 @@ C:\Users\hotro\OneDrive\Desktop\Prog._Assignments\C#_Full-App_Dev\PracPanther1\P
 C:\Users\hotro\OneDrive\Desktop\Prog._Assignments\C#_Full-App_Dev\PracPanther1\PP_MAUIApp\obj\Debug\net7.0-android\stamp\_GenerateJavaStubs.stamp
 C:\Users\hotro\OneDrive\Desktop\Prog._Assignments\C#_Full-App_Dev\PracPanther1\PP_MAUIApp\obj\Debug\net7.0-android\stamp\_GeneratePackageManagerJava.stamp
 C:\Users\hotro\OneDrive\Desktop\Prog._Assignments\C#_Full-App_Dev\PracPanther1\PP_MAUIApp\obj\Debug\net7.0-android\stamp\_ResolveLibraryProjectImports.stamp
+C:\Users\hotro\OneDrive\Desktop\Prog._Assignments\C#_Full-App_Dev\PracPanther1\PP_MAUIApp\obj\Debug\net7.0-android\android\assets\Newtonsoft.Json.dll

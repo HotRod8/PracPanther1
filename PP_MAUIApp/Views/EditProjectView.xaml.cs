@@ -33,11 +33,6 @@ namespace PP.MAUIApp.Views
         {
             BindingContext = new ProjectViewModel (ClientId, ProjId);
         }
-
-        private void BillsClicked(object sender, EventArgs e)
-        {
-
-        }
     }
 }
 

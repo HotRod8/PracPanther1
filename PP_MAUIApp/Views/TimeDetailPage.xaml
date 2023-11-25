@@ -6,6 +6,47 @@
              NavigatedTo="OnArrived">
 
     <VerticalStackLayout>
+        <Label Text="If you want to edit an entry, pick an Employee, a Project, and a Record dropdowns."
+               HorizontalTextAlignment="Center"/>
+        <Label Text="If you want to add an entry, enter an Employee and a Project."
+               HorizontalTextAlignment="Center"/>
+        <Grid>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition />
+                <ColumnDefinition Width="6*"/>
+                <ColumnDefinition />
+                <ColumnDefinition Width="6*"/>
+            </Grid.ColumnDefinitions>
+            <Label Grid.Column="0" Text="Employee:"/>
+            <Picker Grid.Column="1" x:Name="EmployeeList"
+                    ItemsSource="{Binding Path=Employees, Mode=TwoWay}" 
+                    SelectedItem="{Binding Path=SelectedEmployee}"/>
+            <Label Grid.Column="2" Text="Project:"/>
+            <Picker Grid.Column="3" x:Name="ProjectList"
+                    ItemsSource="{Binding Path=Projects, Mode=TwoWay}" 
+                    SelectedItem="{Binding Path=SelectedProject}"/>
+        </Grid>
+        <Grid >
+            <Grid.ColumnDefinitions >
+                <ColumnDefinition />
+                <ColumnDefinition />
+            </Grid.ColumnDefinitions >
+            <Button Grid.Column = "0" Text = "Open Record" Clicked = "OpenClicked" />
+            <Button Grid.Column = "1" Text = "Close Record" Clicked = "CloseClicked" />
+        </Grid >
+
+        <VerticalStackLayout IsVisible="{Binding Path=Visible}">
+            <Grid>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition />
+                    <ColumnDefinition Width="6*"/>
+                </Grid.ColumnDefinitions>
+                <Label Grid.Column="0" Text="Record:"/>
+                <Picker Grid.Column="1"
+                        ItemsSource="{Binding Path=StopWatches, Mode=TwoWay}" 
+                        SelectedItem="{Binding Path=IdToEdit}"/>
+            </Grid>
+        </VerticalStackLayout>
         <Grid>
             <Grid.ColumnDefinitions>
                 <ColumnDefinition />
@@ -14,20 +55,10 @@
             <Label Grid.Column="0" Text="Enter your hours here:"/>
             <Entry Grid.Column="1" Text="{Binding Path=Clock.Hours}"/>
         </Grid>
-        <Grid>
-            <Grid.ColumnDefinitions>
-                <ColumnDefinition />
-                <ColumnDefinition Width="5*"/>
-                <ColumnDefinition />
-            </Grid.ColumnDefinitions>
-            <!--<Textbox Grid.Column="0" x:Name="ProjectGoals" Width="300"
-                                 AcceptsReturn="True" HorizontalAlignment="Left"   
-                                 Header="Enter your goals here:" 
-                                 Text="{Binding Path=Clock.Narrative}"/>-->
-            <Label Grid.Column="0" Text="Enter your goals here:"/>
-            <Entry Grid.Column="1" Text="{Binding Path=Clock.Narrative}"/>
-            <Button Grid.Column="2" Text="Save"  Clicked="SaveClicked"/>
-        </Grid>
+
+        <Label Text="Enter your goals here:"/>
+        <Entry Text="{Binding Path=Clock.Narrative}"/>
+        <Button Text="Save"  Clicked="SaveClicked"/>
         <Button Text="Go Back" Clicked="GoBackClicked"/>
     </VerticalStackLayout>
 </ContentPage>

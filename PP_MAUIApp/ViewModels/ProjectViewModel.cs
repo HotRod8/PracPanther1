@@ -28,6 +28,9 @@ namespace PP.MAUIApp.ViewModels
         public int proj_Id { get; set; }
         public Project Blueprint { get; set; }
 
+        public DateTime MinimumCloseDate => DateTime.Today;
+        public DateTime MaximumCloseDate => DateTime.Today.AddDays(365);
+
         public string Display
         {
             get
@@ -37,12 +40,18 @@ namespace PP.MAUIApp.ViewModels
         }
 
         public ICommand CloseCommand { get; private set; }
+        public ICommand OpenCommand { get; private set; }
         public ICommand DeleteCommand { get; private set; }
         public ICommand EditCommand { get; private set; }
         public ICommand NewBillCommand { get; private set; }
         public ICommand TimerCommand { get; private set; }
-        
 
+
+        private void ExecuteOpen(int clientId, int id)
+        {
+            Project temp = ProjService.Current.GetProj(clientId, id);
+            ProjService.Current.Open(temp);
+        }
         private void ExecuteClose(int clientId, int id)
         {
             Project temp = ProjService.Current.GetProj(clientId, id);
@@ -62,7 +71,7 @@ namespace PP.MAUIApp.ViewModels
         {
             Project temp = ProjService.Current.GetProj(clientId, id);
             IEnumerable<Time> list = TimeService.Current.Times;
-            IEnumerable<Time> templist = list.Where(p => p.ProjectId == temp.Id && p.ClientId == temp.ClientId).ToList();
+            IEnumerable<Time> templist = list.Where(p => p.ProjectId == temp.Id).ToList();
             BillService.Current.MakeBill(templist);
         }
         /*  private void ExecuteTimer()
@@ -78,6 +87,8 @@ namespace PP.MAUIApp.ViewModels
             }*/
         private void SetupCommands()
         {
+            OpenCommand = new Command(
+                (c) => ExecuteOpen((c as ProjectViewModel).Blueprint.ClientId, (c as ProjectViewModel).Blueprint.Id));
             CloseCommand = new Command(
                 (c) => ExecuteClose((c as ProjectViewModel).Blueprint.ClientId, (c as ProjectViewModel).Blueprint.Id));
             DeleteCommand = new Command(
@@ -98,7 +109,11 @@ namespace PP.MAUIApp.ViewModels
             {
                 Blueprint = new Project();
             }
-            else Blueprint = Project;
+            else
+            {
+                Blueprint = Project;
+            }
+
             SetupCommands();
         }
         //Need to find a way to get the selected project's ID
@@ -123,6 +138,8 @@ namespace PP.MAUIApp.ViewModels
         }
         public void Update()
         {
+            //If Blueprint wasn't a reference pointer,
+            //the Get would've overwritten its data. 
             Blueprint = ProjService.Current.GetProj(Client_Id, proj_Id);
             ProjService.Current.Edit(Blueprint);
         }

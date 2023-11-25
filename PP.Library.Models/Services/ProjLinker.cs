@@ -6,6 +6,10 @@ using System.Security.Claims;
 using System.Text;
 using System.Threading.Tasks;
 using PP_Library.Models;
+﻿using Newtonsoft.Json;
+﻿using PP_Library.DTO;
+﻿using PP_Library.Utilities;
+
 
 namespace PP_Library.Services
 {
@@ -14,93 +18,95 @@ namespace PP_Library.Services
     //Can add Projects to the Website, which then is listed under a Client
     public class ProjLinker
     {
+        private List<ClientDTO> clients;
+        public List<ClientDTO> Clients { 
+            get {
+                
+                return clients ?? new List<ClientDTO>();
+            } 
+        }
+
+        //private List<Client> clients;
+
         private static ProjLinker? instance;
-        private static object daLock = new object();
+
         public static ProjLinker Current
         {
             get
             {
-                //For thread safety
-                lock (daLock)
+                if (instance == null)
                 {
-                    //Critical Part - OS issue if used w/o lock
-                    if (instance == null)
-                    {
-                        instance = new ProjLinker();
-                    }
+                    instance = new ProjLinker();
                 }
-
                 return instance;
             }
         }
-
-        private List<Client> customers;
         private ProjLinker()
         {
-            customers = new List<Client>
-            { 
-                new Client {Id = 3, Name = "Noob Mckowsky"},
-                new Client {Id = 9, Name = "Notisme Chefpie"},
-                new Client {Id = 21, Name = "Anub Isme"}
-            };
-        }
-        public List<Client> Clients { get { return customers; } }
-        public Client? Get(int id)
-        {
-            return customers.FirstOrDefault(e => e.Id == id);
+            var response = new WebRequestHandler()
+                    .Get("/Client")
+                    .Result;
+
+            clients = JsonConvert
+                .DeserializeObject<List<ClientDTO>>(response)
+                ?? new List<ClientDTO>();
         }
 
-        public List<Client> Search(string query)
+        public void Delete(ClientDTO c)
         {
-            return Clients.Where(s => s.Name.ToUpper().Contains(query?.ToUpper() ?? string.Empty)).ToList();
+            var response = new WebRequestHandler()
+                    .Delete($"/Client/Delete/{c.Id}").Result;
+            Clients.Remove(c);
         }
 
-        public void Read()
+        public void AddOrUpdate(ClientDTO c)
         {
-            foreach (var money in customers)
-            { Console.WriteLine(money); }
-            //customers.ForEach(Console.WriteLine);
-        }
-
-        public void Add(Client? client)
-        { 
-            if(client != null) 
+            //Sends c to the Database to update it or add to it.
+            var response = new WebRequestHandler().Post($"/Client/{c.Id}", c).Result;
+            
+            //The rest handles the client-side display
+            var myUpdatedClient = JsonConvert.DeserializeObject<ClientDTO>(response);
+            if(myUpdatedClient != null)
             {
-                if (client.Id == 0) { client.Id = LastId + 1; }
-                customers.Add(client);
+                var existingClient = clients.FirstOrDefault(c => c.Id == myUpdatedClient.Id);
+                if(existingClient == null)
+                {
+                    clients.Add(myUpdatedClient);
+                }else
+                {
+                    var index = clients.IndexOf(existingClient);
+                    clients.RemoveAt(index);
+                    clients.Insert(index, myUpdatedClient);
+                }
             }
+
         }
 
-        private int LastId
-        {
-            get {  return Clients.Any() ? Clients.Select(c => c.Id).Max() : 0;  }
-        }
-
-        public void Edit(Client Model)
-        {
-            var ClientToUpdate = Current.Get(Model.Id);
-            if (ClientToUpdate != null)
-            {
-                ClientToUpdate.Name = Model.Name;
-                ClientToUpdate.Notes = Model.Notes;
-            }
-        }
-        public void CloseClient(Client client) 
+        //Adjust this to delete from backside table
+        public void CloseClient(ClientDTO client)
         {
             var deactivateTarget = Get(client.Id);
             var Projects = ProjService.Current.GetAllProjs(deactivateTarget?.Id ?? 0);
-            var Stuff = Projects.Any(p => p.IsActive); 
-            if (deactivateTarget != null && Stuff == false) 
+            var Stuff = Projects.Any(p => p.IsActive);
+            if (deactivateTarget != null && Stuff == false)
             { deactivateTarget.IsActive = false; }
         }
-        public void Delete(int id)
+
+        public ClientDTO? Get(int id)
         {
-            var customerToRemove = Get(id);
-            if (customerToRemove != null) { customers.Remove(customerToRemove); }
+            var response = new WebRequestHandler()
+                    .Get($"/Client/GetClients/{id}")
+                    .Result;
+            var client = JsonConvert.DeserializeObject<Client>(response);
+            return Clients.FirstOrDefault(c => c.Id == id);
         }
-        public void Delete(Client c)
+
+        public IEnumerable<ClientDTO> Search(string query)
         {
-            Delete(c.Id);
+            return Clients
+                .Where(c => c.ToString().ToUpper()
+                    .Contains(query.ToUpper()));
         }
     }
+
 }

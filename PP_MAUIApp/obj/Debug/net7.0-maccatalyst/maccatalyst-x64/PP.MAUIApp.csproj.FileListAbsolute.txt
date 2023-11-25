@@ -259,3 +259,4 @@ C:\Users\hotro\OneDrive\Desktop\Prog._Assignments\C#_Full-App_Dev\PracPanther1\P
 C:\Users\hotro\OneDrive\Desktop\Prog._Assignments\C#_Full-App_Dev\PracPanther1\PP_MAUIApp\obj\Debug\net7.0-maccatalyst\maccatalyst-x64\PP.MAUIApp.pdb
 C:\Users\hotro\OneDrive\Desktop\Prog._Assignments\C#_Full-App_Dev\PracPanther1\PP_MAUIApp\obj\Debug\net7.0-maccatalyst\maccatalyst-x64\PP.MAUIApp.genruntimeconfig.cache
 C:\Users\hotro\OneDrive\Desktop\Prog._Assignments\C#_Full-App_Dev\PracPanther1\PP_MAUIApp\obj\Debug\net7.0-maccatalyst\maccatalyst-x64\ref\PP.MAUIApp.dll
+C:\Users\hotro\OneDrive\Desktop\Prog._Assignments\C#_Full-App_Dev\PracPanther1\PP_MAUIApp\bin\Debug\net7.0-maccatalyst\maccatalyst-x64\Newtonsoft.Json.dll

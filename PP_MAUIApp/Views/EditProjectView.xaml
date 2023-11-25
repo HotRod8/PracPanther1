@@ -8,7 +8,18 @@
         <Grid>
             <Grid.ColumnDefinitions>
                 <ColumnDefinition />
-                <ColumnDefinition Width="5*"/>
+                <ColumnDefinition Width="6*"/>
+            </Grid.ColumnDefinitions>
+            <Label Grid.Column="0" Text="Edit Project Close Date if you want:"/>
+            <DatePicker Grid.Column="1" 
+                        Date="{Binding Path=Blueprint.ClosedDate}"
+                        MinimumDate="{Binding Path=MinimumCloseDate}"
+                        MaximumDate="{Binding Path=MaximumCloseDate}"/>
+        </Grid>
+        <Grid>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition />
+                <ColumnDefinition Width="6*"/>
             </Grid.ColumnDefinitions >
             <!--Make sure to bind your path here to a Project type in ProjectViewModel-->
             <Label Grid.Column="0" Text="Change your Long Name here:"/>
@@ -25,7 +36,6 @@
             <Button Grid.Column="2" Text="Update" Clicked="UpdateClicked"/>
         </Grid>
         <Button Text="Go Back" Clicked="GoBackClicked"/>
-        <Button Text="View Bills" Clicked="BillsClicked"/>
         <!--When finished executing "View Bills", display all bills for this project below-->
     </VerticalStackLayout>
 </ContentPage>

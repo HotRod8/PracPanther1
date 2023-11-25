@@ -7,6 +7,14 @@
         <Grid>
             <Grid.ColumnDefinitions>
                 <ColumnDefinition />
+                <ColumnDefinition Width="5*"/>
+            </Grid.ColumnDefinitions >
+            <Label Grid.Column="0" Text="Change your Notes here:"/>
+            <Entry Grid.Column="1" Text="{Binding Path=Model.Notes}"/>
+        </Grid>
+        <Grid>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition />
                 <ColumnDefinition Width="6*"/>
                 <ColumnDefinition />
             </Grid.ColumnDefinitions>

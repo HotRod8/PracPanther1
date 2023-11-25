@@ -4,14 +4,9 @@ using PP_Library.Services;
 
 namespace PP.MAUIApp.Views 
 {
-    [QueryProperty ("EmplID","EmployeeID")]
-    [QueryProperty ("ProjID","ProjectID")]
-    [QueryProperty ("Client_Id","ClientId")]
+
     public partial class TimePage : ContentPage
     {
-        public int EmplID { get; set; }
-        public int ProjID { get; set; }
-        public int Client_Id { get; set; }
         public TimePage()
         {
             InitializeComponent();
@@ -19,13 +14,13 @@ namespace PP.MAUIApp.Views
 
         private void OnArrived(object sender, NavigatedToEventArgs e)
         {
-            BindingContext = new TimePageViewModel(EmplID, ProjID, Client_Id);
+            BindingContext = new TimePageViewModel();
             (BindingContext as TimePageViewModel).RefreshTimeList();
         }
 
         private void AddClicked(object sender, EventArgs e)
         {
-            Shell.Current.GoToAsync($"//TimeDetailPage?emplId={EmplID}&projId={ProjID}&clientId={Client_Id}");
+            Shell.Current.GoToAsync("//TimeDetailPage");
         }
 
         private void GoBackClicked(object sender, EventArgs e)
@@ -33,7 +28,6 @@ namespace PP.MAUIApp.Views
             Shell.Current.GoToAsync("//MainPage");
         }
 
-        //Delete is mysteriously not refreshing.
         private void DeleteClicked(object sender, EventArgs e)
         {
             (BindingContext as TimePageViewModel).RefreshTimeList();
@@ -42,6 +36,7 @@ namespace PP.MAUIApp.Views
         private void EditClicked(object sender, EventArgs e)
         {
             //Edit Command takes care of transfer to Time Details Page
+            Shell.Current.GoToAsync("//TimeDetailPage");
         }
 
         //Search results are mysteriously not refreshing.

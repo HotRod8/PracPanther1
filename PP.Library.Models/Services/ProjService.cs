@@ -34,12 +34,7 @@ namespace PP_Library.Services
         private List<Project> customers;
         private ProjService()
         {
-            customers = new List<Project>
-            {
-                new Project {Id = 1, ClientId = 3, LongName = "Notes for my figthing games", ShortName = "FG Notes"},
-                new Project {Id = 2, ClientId = 3, LongName = "Weekly improvements on my playstyle", ShortName = "Play Notes"},
-                new Project {Id = 3, ClientId = 3, LongName = "List of Matchup Strategies", ShortName = "Matchups"}
-            };
+            customers = new List<Project>();
         }
         public List<Project> Projects { get { return customers; } }
 
@@ -47,6 +42,10 @@ namespace PP_Library.Services
         public Project? Get(int Id)
         {
             return customers.FirstOrDefault(e => e.Id == Id);
+        }
+        public IEnumerable<Project?> GetProjs(int cliId)
+        {
+            return customers.Where(e => e.ClientId == cliId);
         }
         public Project? GetProj(int cliId, int prId)
         {
@@ -70,7 +69,7 @@ namespace PP_Library.Services
                     temp.Add(newproj);
                 }
             }
-            return temp.Where(s => s.LongName.ToUpper().Contains(query?.ToUpper() ?? string.Empty)).ToList();
+            return temp.Where(s => s.ToString().ToUpper().Contains(query?.ToUpper() ?? string.Empty)).ToList();
         }
 
         //Make sure to add the clientId as well. Otherwise, it won't work.
@@ -108,6 +107,15 @@ namespace PP_Library.Services
             }
         }
 
+        public void Open(Project customerToOpen)
+        {
+            //Do DateTime.UtcNow for global use
+            if (customerToOpen != null)
+            {
+                customerToOpen.IsActive = true;
+                customerToOpen.ClosedDate = DateTime.MaxValue;
+            }
+        }
         public void Close(Project customerToRemove)
         {
             //Do DateTime.UtcNow for global use

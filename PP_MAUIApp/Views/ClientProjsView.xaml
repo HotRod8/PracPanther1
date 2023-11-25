@@ -2,12 +2,21 @@
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:vm="clr-namespace:PP.MAUIApp.ViewModels"
+             xmlns:toolkit="http://schemas.microsoft.com/dotnet/2022/maui/toolkit"
              x:Class="PP.MAUIApp.Views.ClientProjsView"
              Title="Projects of the Client"
              NavigatedTo="OnArrived">
 
     <ScrollView>
         <VerticalStackLayout>
+            <Grid >
+                <Grid.ColumnDefinitions >
+                    <ColumnDefinition Width = "7*" />
+                    <ColumnDefinition />
+                </Grid.ColumnDefinitions >
+                <Entry Grid.Column = "0" Text = "{Binding Path=Query}" ></Entry >
+                <Button Grid.Column = "1" Text = "Search" Clicked = "ClickedSearch" ></Button >
+            </Grid >
 
             <Grid >
                 <Grid.ColumnDefinitions >
@@ -33,7 +42,8 @@
                             <ViewCell>
                                 <Grid >
                                     <Grid.ColumnDefinitions >
-                                        <ColumnDefinition Width="6*"/>
+                                        <ColumnDefinition Width="4*"/>
+                                        <ColumnDefinition />
                                         <ColumnDefinition />
                                         <ColumnDefinition />
                                         <ColumnDefinition />
@@ -41,22 +51,27 @@
                                     </Grid.ColumnDefinitions >
                                     <Label Grid.Column="0" Text="{Binding Path=Display}"></Label>
                                     <Button Grid.Column = "1" 
-                                            Text = "Edit Project" 
-                                            Command="{Binding Path=EditCommand}" 
-                                            CommandParameter="{Binding}"
-                                            Clicked="EditClicked"></Button >
-                                    <Button Grid.Column = "2" 
                                             Text = "Generate Bills" 
                                             Command="{Binding Path=NewBillCommand}" 
                                             CommandParameter="{Binding}"
                                             Clicked="BillsClicked"/>
+                                    <Button Grid.Column = "2" 
+                                            Text = "Edit" 
+                                            Command="{Binding Path=EditCommand}" 
+                                            CommandParameter="{Binding}"
+                                            Clicked="EditClicked"></Button >
                                     <Button Grid.Column = "3" 
-                                            Text = "Close Project" 
+                                            Text = "Open" 
+                                            Command="{Binding Path=OpenCommand}" 
+                                            CommandParameter="{Binding}"
+                                            Clicked="OpenClicked"></Button >
+                                    <Button Grid.Column = "4" 
+                                            Text = "Close" 
                                             Command="{Binding Path=CloseCommand}" 
                                             CommandParameter="{Binding}"
                                             Clicked="CloseClicked"></Button >
-                                    <Button Grid.Column = "4" 
-                                            Text = "Delete Project" 
+                                    <Button Grid.Column = "5" 
+                                            Text = "Delete" 
                                             Command="{Binding Path=DeleteCommand}" 
                                             CommandParameter="{Binding}"
                                             Clicked="DeleteClicked"></Button >
@@ -66,19 +81,36 @@
                     </ListView.ItemTemplate>
                 </ListView >
             </Grid >
+            
+            <VerticalStackLayout IsVisible="{Binding Path=ShowOrHide}">
+                <Grid >
+                    <Grid.ColumnDefinitions >
+                        <ColumnDefinition />
+                        <ColumnDefinition />
+                        <ColumnDefinition />
+                    </Grid.ColumnDefinitions >
+                    <Label Grid.Column = "0" Text = "List of Bills: " />
+                    <Button Grid.Column = "1" Text = "Open" Clicked = "ViewBillsClicked" />
+                    <Button Grid.Column = "2" Text = "Close" Clicked = "CloseBillsClicked" />
+                </Grid >
 
-            <Grid >
-                <Grid.ColumnDefinitions >
-                    <ColumnDefinition Width = "7*" />
-                    <ColumnDefinition />
-                    <ColumnDefinition />
-                </Grid.ColumnDefinitions >
-                <Entry Grid.Column = "0" Text = "{Binding Path=Query}" ></Entry >
-                <Button Grid.Column = "1" Text = "Search" Clicked = "ClickedSearch" ></Button >
-                <Button Grid.Column = "2" Text = "View Bills" Clicked="BillsClicked"/>
-                <!--When finished executing "View Bills", display all project bills below-->
-            </Grid >
+                <ListView
+                ItemsSource = "{Binding Path=Bills, Mode=TwoWay}"
+                SelectedItem = "{Binding Path=SelectedBill, Mode=TwoWay}"
+                >
+                    <ListView.ItemTemplate>
+                        <DataTemplate>
+                            <ViewCell>
 
+                                <Label IsVisible="{Binding Path=Tab.Unpaid}"
+                                   Text="{Binding Path=DisplayBills}"></Label>
+
+                            </ViewCell>
+                        </DataTemplate>
+                    </ListView.ItemTemplate>
+                </ListView >
+            </VerticalStackLayout>
+            
         </VerticalStackLayout>
     </ScrollView>
 </ContentPage>

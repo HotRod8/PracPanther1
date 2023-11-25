@@ -33,28 +33,39 @@ namespace PP_Library.Services
         private List<Bill> workBill;
         private BillService()
         {
-            workBill = new List<Bill>
-            {
-                new Bill {DueDate = DateTime.MaxValue, TotalAmount = 12, TimeList = new List<Time>()},
-                new Bill {DueDate = DateTime.Today, TotalAmount = 8, TimeList = new List<Time>()},
-                new Bill {DueDate = DateTime.Now, TotalAmount = 2, TimeList = new List<Time>()}
-            };
+            workBill = new List<Bill>();
         }
         public List<Bill> Bills { get { return workBill; } }
+
+        public List<Bill> Search(string query)
+        {
+            //Doesn't like a null query
+            return Bills.Where(s => s.ToString().ToUpper().Contains(query.ToUpper())).ToList();
+        }
         public void MakeBill(IEnumerable<Time> aList)
         {
             decimal sum = 0;
-            foreach (var a in aList) 
+            DateTime dateTime = DateTime.MinValue;
+            foreach (var a in aList)
             { 
                 Employee employee = EmployeeService.Current.Get(a.EmployeeId);
-                sum += a.Hours * employee.Id;
+                //Inverse the hours logic here
+                if (employee != null) { sum += a.Hours * employee.Rate; }
+                Project project = ProjService.Current.Get(a.ProjectId);
+                if (project != null && project.ClosedDate > dateTime) 
+                { dateTime = project.ClosedDate; }
             }
-            Bill newBill = new Bill { TotalAmount = sum, TimeList = aList };
+            Bill newBill = new Bill { TotalAmount = sum, DueDate = dateTime, TimeList = aList };
             workBill.Add(newBill);
         }
+        //Work on getting a bill for each project under one client
         public void MakeAllBills(IEnumerable<Time> fullList)
-        { 
-        
+        {
+            foreach (var member in fullList)
+            {
+                var templist = fullList.Where(l => l.ProjectId == member.ProjectId);
+                MakeBill(templist);
+            }
         }
     }
 }

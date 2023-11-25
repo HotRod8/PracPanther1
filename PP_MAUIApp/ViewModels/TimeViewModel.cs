@@ -13,86 +13,96 @@ using PP_Library.Services;
 
 namespace PP.MAUIApp.ViewModels
 {
-    [QueryProperty(nameof(Employ_Id), "EmpID")]
-    [QueryProperty(nameof(Proj_Id), "ProjID")]
-    [QueryProperty(nameof(Client_Id), "ClientID")] 
-    public class TimeViewModel
+    public class TimeViewModel : INotifyPropertyChanged
     {
-        public int Client_Id { get; set; }
-        private int employ_Id;
-        public int Employ_Id
+        public bool Visible { get; set; }
+        public ObservableCollection<Time> StopWatches
         {
             get
             {
-                return employ_Id;
+                if (SelectedEmployee != null && SelectedProject != null)
+                {
+                    Visible = true;
+                    return new ObservableCollection<Time>(TimeService.Current.Times.Where
+                    (s => s.EmployeeId == SelectedEmployee.Id && s.ProjectId == SelectedProject.Id));
+                }
+                else
+                {
+                    Visible = false;
+                    return null;
+                }
+            }
+        }
+        private Time TimeId;
+        public Time IdToEdit 
+        { 
+            get
+            {
+                return TimeId;
             }
             set
             {
-                if (value > 0)
+                TimeId = value ?? null;
+                if (TimeId != null)
                 {
-                    employ_Id = value;
+                    Clock.Id = TimeId.Id;
                 }
+
             }
         }
-        public int proj_Id { get; set; }
-        public int Proj_Id
+        public ObservableCollection<Employee> Employees
         {
             get
             {
-                return proj_Id;
+                return new ObservableCollection<Employee>(EmployeeService.Current.Employees);
+            }
+        }
+        private Employee selectedEmployee;
+        public Employee SelectedEmployee { 
+            get { 
+                return selectedEmployee;
+            } 
+            set
+            {
+                selectedEmployee = value ?? null;
+                if(selectedEmployee != null)
+                {
+                    Clock.EmployeeId = selectedEmployee.Id;
+                }
+            }
+        }
+        public ObservableCollection<Project> Projects
+        {
+            get
+            {
+                return new ObservableCollection<Project>(ProjService.Current.Projects);
+            }
+        }
+        private Project selectedProject;
+        public Project SelectedProject {
+            get
+            {
+                return selectedProject;
             }
             set
             {
-                if (value > 0)
+                selectedProject = value ?? null;
+                if (selectedProject != null)
                 {
-                    proj_Id = value;
+                    Clock.ProjectId = selectedProject.Id;
+                    Clock.ClientId = selectedProject.ClientId;
                 }
             }
         }
-        public Time Clock { get; set; }
-
-        public ObservableCollection<ClientViewModel> Clients
-        {
+        private Time watch;
+        public Time Clock {
             get
-            {
-                //if there is no client, we have nothing to return yet
-                if (Clock == null || Clock.ClientId == 0)
-                {
-                    return new ObservableCollection<ClientViewModel>();
-                }
-                return new ObservableCollection<ClientViewModel>(ProjLinker
-                    .Current.Clients.Where(p => p.Id == Clock.ClientId)
-                    .Select(r => new ClientViewModel(r)));
+            { 
+                return watch;
             }
-        }
-        public ObservableCollection<ProjectViewModel> Projects
-        {
-            get
-            {
-                //if this is a new client, we have no projects to return yet
-                if (Clock == null || Clock.ProjectId == 0)
-                {
-                    return new ObservableCollection<ProjectViewModel>();
-                }
-                return new ObservableCollection<ProjectViewModel>(ProjService
-                    .Current.Projects.Where(p => p.Id == Clock.ProjectId)
-                    .Select(r => new ProjectViewModel(r)));
-            }
-        }
-
-        public ObservableCollection<EmployeeViewModel> Employees
-        {
-            get
-            {
-                //if this is a new client, we have no projects to return yet
-                if (Clock == null || Clock.EmployeeId == 0)
-                {
-                    return new ObservableCollection<EmployeeViewModel>();
-                }
-                return new ObservableCollection<EmployeeViewModel>
-                    (EmployeeService.Current.Employees.Where
-                    (p => p.Id == Clock.EmployeeId).Select
-                    (r => new EmployeeViewModel(r)));
+            set
+            { 
+                watch = value ?? new Time();
             }
         }
 
@@ -105,18 +115,12 @@ namespace PP.MAUIApp.ViewModels
         }
 
         public ICommand DeleteCommand { get; private set; }
-        public ICommand EditCommand { get; private set; }
         public ICommand TimerCommand { get; private set; }
 
-        private void ExecuteDelete(int empId, int projid)
+        private void ExecuteDelete(int empId, int projid, int timeid)
         {
-            Time temp = TimeService.Current.Get(empId, projid, Client_Id);
+            Time temp = TimeService.Current.Get(empId, projid, timeid);
             TimeService.Current.Delete(temp);
-        }
-        private void ExecuteEdit(int empid, int projId)
-        {
-            //Can use this approach or a different approach
-            Shell.Current.GoToAsync($"//TimeDetailPage?emplId={empid}&projId={projId}");
         }
         /*  private void ExecuteTimer()
             {
@@ -132,64 +136,45 @@ namespace PP.MAUIApp.ViewModels
         private void SetupCommands()
         {
             DeleteCommand = new Command(
-                (c) => ExecuteDelete((c as TimeViewModel).Clock.EmployeeId, (c as TimeViewModel).Clock.ProjectId));
-            EditCommand = new Command(
-                (c) => ExecuteEdit((c as TimeViewModel).Clock.EmployeeId, (c as TimeViewModel).Clock.ProjectId));
+                (c) => ExecuteDelete((c as TimeViewModel).Clock.EmployeeId, (c as TimeViewModel).Clock.ProjectId, (c as TimeViewModel).Clock.Id));
             //    TimerCommand = new Command(ExecuteTimer);
         }
 
         //Constructors must finish before outside variables are set.
-        public TimeViewModel(Time Time)
+        public TimeViewModel(Time time)
         //Using Times from TimeViewViewModel to get individual Times,
         //which lets us get the properties of a single Time
         {
-            if (Time == null)
-            {
-                Clock = new Time();
-            }
-            else Clock = Time;
+            Clock = time;
             SetupCommands();
         }
         //Need to find a way to get the selected Time's ID
-        public TimeViewModel(int empId, int projId, int cliId)
-        {
-            Employ_Id = empId;
-            Proj_Id = projId; 
-            Client_Id = cliId;
-            Clock = TimeService.Current.Get(Employ_Id, Proj_Id, Client_Id);
-            if (Clock == null) { Clock = new Time(); }
-            SetupCommands();
-        }
         public TimeViewModel()
         {
-            //ClientId = employ_Id;
-            Clock = new Time();
+            if (SelectedEmployee == null && SelectedProject == null && IdToEdit == null && Clock == null)
+            {    Clock = new Time();    }
+            else Clock = TimeService.Current.Get(SelectedEmployee.Id, SelectedProject.Id, IdToEdit.Id);
             SetupCommands();
         }
 
-        public void AddorUpdate(int eid, int pid, int cid)
+        public void AddorUpdate()
         {
-            var test1 = ProjService.Current.Projects.
-                FirstOrDefault(p => p.Id == pid && p.ClientId == cid);
-            var test2 = EmployeeService.Current.Employees.FirstOrDefault(e => e.Id == eid);
-            var test3 = TimeService.Current.Times.
-                FirstOrDefault(t => t.ProjectId == pid && t.ClientId == cid && t.EmployeeId == eid);
-            if (test1 != null && test2 != null && test3 == null)
-            {
-                TimeService.Current.Add(Clock);
-            }
-            else if((test1 == null || test2 == null) && test3 == null)
-            {
-                return;
-            }
-            else
-            {
-                if (Clock == null) 
-                { Clock = TimeService.Current.Get(eid, pid, cid); }
-                TimeService.Current.Edit(Clock);
-                Clock = new Time();
-            }
+            var test = TimeService.Current.Times.
+                FirstOrDefault(t => t.ProjectId == SelectedProject.Id && t.EmployeeId == SelectedEmployee.Id);
+            if (test == null)
+            {    TimeService.Current.Add(Clock);    }
+            else if(test != null && IdToEdit == null)
+            {    TimeService.Current.Add(Clock);    }
+            else TimeService.Current.Edit(Clock);
             
+        }
+        public void MakeVisible()
+        {
+            if(SelectedEmployee != null && SelectedProject != null) { Visible = true; }
+        }
+        public void MakeInvisible()
+        {
+            Visible = false;
         }
 
         public event PropertyChangedEventHandler PropertyChanged;
@@ -204,6 +189,14 @@ namespace PP.MAUIApp.ViewModels
             //same as NotifyPropertyChanged("Projects");
             NotifyPropertyChanged(nameof(Projects));
             NotifyPropertyChanged(nameof(Employees));
+            NotifyPropertyChanged(nameof(StopWatches));
+            NotifyPropertyChanged(nameof(Visible));
+        }
+
+        public void RefreshVisibility()
+        { 
+            NotifyPropertyChanged(nameof(Visible));
+            NotifyPropertyChanged(nameof(StopWatches));
         }
     }
 }

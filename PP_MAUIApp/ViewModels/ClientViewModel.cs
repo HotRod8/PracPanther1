@@ -1,4 +1,5 @@
 ﻿using PP_Library.Models;
+using PP_Library.DTO;
 using PP_Library.Services;
 using System;
 using System.Collections.Generic;
@@ -13,7 +14,9 @@ namespace PP.MAUIApp.ViewModels
     public class ClientViewModel
     {
         //Still see Model's data when Add and Edit have been pulled up for the first time.
-        public Client Model {  get; set;  }
+        public ClientDTO Model {  get; set;  }
+        public DateTime MinimumCloseDate => DateTime.Today;
+        public DateTime MaximumCloseDate => DateTime.Today.AddDays(365);
 
         public string Display
         {
@@ -27,9 +30,9 @@ namespace PP.MAUIApp.ViewModels
         public ICommand EditCommand { get; private set; }
         public ICommand ViewProjsCommand { get; private set; }
 
-        public void ExecuteDelete(int id)
+        public void ExecuteDelete(ClientDTO model)
         {
-            ProjLinker.Current.Delete(id);
+            ProjLinker.Current.Delete(model);
         }
         public void ExecuteEdit(int id)
         {
@@ -44,7 +47,7 @@ namespace PP.MAUIApp.ViewModels
         private void SetupCommands()
         {
             DeleteCommand = new Command(
-                (c) => ExecuteDelete((c as ClientViewModel).Model.Id));
+                (c) => ExecuteDelete((c as ClientViewModel).Model));
             EditCommand = new Command(
                 (c) => ExecuteEdit((c as ClientViewModel).Model.Id));
             ViewProjsCommand = new Command(
@@ -52,7 +55,7 @@ namespace PP.MAUIApp.ViewModels
         }
 
         //What are these 3 constructors for?
-        public ClientViewModel(Client client)
+        public ClientViewModel(ClientDTO client)
         {
             Model = client;
             SetupCommands();
@@ -66,19 +69,17 @@ namespace PP.MAUIApp.ViewModels
 
         public ClientViewModel()
         {
-            Model = new Client();
+            Model = new ClientDTO();
             SetupCommands();
         }
 
         public void Add()
         {
-            ProjLinker.Current.Add(Model);
-            Model = new Client();
+            ProjLinker.Current.AddOrUpdate(Model);
         }
         public void Update() 
         {
-            ProjLinker.Current.Edit(Model);
-            Model = new Client();
+            ProjLinker.Current.AddOrUpdate(Model);
         }
         public void CloseClient()
         {
