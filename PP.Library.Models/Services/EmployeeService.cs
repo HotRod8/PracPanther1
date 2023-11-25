@@ -33,12 +33,7 @@ namespace PP_Library.Services
         private List<Employee> employees;
         private EmployeeService()
         {
-            employees = new List<Employee>
-            {
-                new Employee {Id = 300, Name = "Rodana Smith", Rate = 30},
-                new Employee {Id = 400, Name = "Britannia Faith", Rate = 20},
-                new Employee {Id = 500, Name = "Ganondorf Dragonsword", Rate = 100}
-            };
+            employees = new List<Employee>();
         }
         public List<Employee> Employees { get { return employees; } }
         public Employee? Get(int emplid)
@@ -48,7 +43,7 @@ namespace PP_Library.Services
 
         public List<Employee> Search(string query)
         {
-            return employees.Where(s => s.Name.ToUpper().Contains(query?.ToUpper() ?? string.Empty)).ToList();
+            return employees.Where(s => s.ToString().ToUpper().Contains(query?.ToUpper() ?? string.Empty)).ToList();
         }
 
         public void Add(Employee? Employee)

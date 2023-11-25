@@ -9,3 +9,11 @@
 /PP.Library.Models/obj
 /PP.CLI/bin/Debug/net7.0
 /PP.CLI/obj
+/PP.API/.vs
+/PP.API/bin/Debug/net7.0
+/PP.API/obj
+/PP_MAUIApp/bin/Debug/net7.0-android
+/PP_MAUIApp/bin/Debug/net7.0-ios/iossimulator-x64
+/PP_MAUIApp/bin/Debug/net7.0-maccatalyst/maccatalyst-x64
+/PP_MAUIApp/bin/Debug/net7.0-windows10.0.19041.0/win10-x64/AppX
+/PP_MAUIApp/obj/Debug/net7.0-android/android

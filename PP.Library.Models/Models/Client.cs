@@ -1,4 +1,5 @@
-﻿using System;
+﻿using PP_Library.DTO;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -8,6 +9,22 @@ namespace PP_Library.Models
 { 
     public class Client
     {
+        public Client()
+        {
+            IsActive = true;
+            Id = 0;
+            Name = string.Empty;
+            OpenDate = DateTime.Today;
+        }
+        public Client(ClientDTO dto)
+        {
+            this.Id = dto.Id;
+            this.Name = dto.Name;
+            this.Notes = dto.Notes;
+            this.OpenDate = dto.OpenDate;
+            this.Projects = dto.Projects;
+            this.IsActive = dto.IsActive;
+        }
         /*
          * An Int property called Id
          * A DateTime property called OpenDate
@@ -34,14 +51,6 @@ namespace PP_Library.Models
                 return $"{Id}. {Name}. {Notes}. #{Projects.Count}";
             }
             return "Account inactive or does not exist.";
-        }
-
-        public Client()
-        {
-            IsActive = true;
-            Id = 0;
-            Name = string.Empty;
-            OpenDate = DateTime.Today; 
         }
     }
     /*Allow users to supply CRUD (Create, Read, Update, and Delete) functionality for Clients to a list of Clients

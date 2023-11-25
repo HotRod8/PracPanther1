@@ -20,6 +20,7 @@ namespace PP_Library.Models
         //delete multiple Time entries at once.
         public Time() 
         {
+            Id = 0;
             ClientId = 0;
             ProjectId = 0;
             EmployeeId = 0;
@@ -27,19 +28,19 @@ namespace PP_Library.Models
             Narrative = "";
             Hours = 0;
         }
-        //Because ProjectId is only unique per client,
-        //we must take in the ClientId to connect them
-        public int ClientId { get; set; }
+        //TimeID below.
+        public int Id { get; set; }
         public int ProjectId { get; set; }
         public int EmployeeId { get; set; }
+        public int ClientId { get; set; }
         public DateTime Date { get; set; }
         public string? Narrative { get; set; }
-        public int Hours { get; set; }
+        public decimal Hours { get; set; }
 
         public override string ToString()
         {
-            return $"EmplID:[{EmployeeId}] ProjID:({ProjectId}) " +
-                $"{Date}. {Hours} total hrs.\n{Narrative}";
+            return $"ID - {Id}, EmplID:[{EmployeeId}], ProjID:({ProjectId}), " +
+                $"{Date}, {Hours} total hrs.\n{Narrative}";
         }
     }
     /* Allow users to supply CRUD (Create, Read, Update, and Delete) functionality to a Time entry on a Project.
